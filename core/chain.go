@@ -9,7 +9,7 @@ import (
 )
 
 type Chain interface {
-	SetParams(cfg *config.RawChainConfig, logger log15.Logger, sysErr chan<- error) error
+	Initialize(cfg *config.RawChainConfig, logger log15.Logger, sysErr chan<- error) error
 	Start() error // Start chain
 	SetRouter(*Router)
 	RSymbol() RSymbol

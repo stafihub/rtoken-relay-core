@@ -8,6 +8,7 @@ import (
 type RSymbol string
 
 const (
+	//stafi chain
 	RFIS   = RSymbol("RFIS")
 	RDOT   = RSymbol("RDOT")
 	RKSM   = RSymbol("RKSM")
