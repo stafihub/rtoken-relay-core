@@ -39,7 +39,7 @@ func (c *Core) Start() {
 	for _, chain := range c.Registry {
 		err := chain.Start()
 		if err != nil {
-			c.log.Error("failed to start chain", "chain", chain.Rsymbol(), "err", err)
+			c.log.Error("failed to start chain", "chain", chain.RSymbol(), "err", err)
 			return
 		}
 		c.log.Info(fmt.Sprintf("Started %s chain", chain.Name()))

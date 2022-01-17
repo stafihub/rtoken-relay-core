@@ -12,7 +12,7 @@ import (
 
 // Handler consumes a message and makes the requried on-chain interactions.
 type Handler interface {
-	HandleMessage(msg *Message) bool
+	HandleMessage(msg *Message)
 }
 
 // Router forwards messages from their source to their destination
