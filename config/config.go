@@ -39,13 +39,12 @@ type Config struct {
 
 // RawChainConfig is parsed directly from the config file and should be using to construct the core.ChainConfig
 type RawChainConfig struct {
-	Name            string                 `json:"name"`
-	Type            string                 `json:"type"`
-	Rsymbol         string                 `json:"rsymbol"`
-	Endpoint        string                 `json:"endpoint"` // url for rpc endpoint
-	KeystorePath    string                 `json:"keystorePath"`
-	LatestBlockFlag bool                   `json:"latestBlockFlag"`
-	Opts            map[string]interface{} `json:"opts"`
+	Name         string      `json:"name"`
+	Type         string      `json:"type"`
+	Rsymbol      string      `json:"rsymbol"`
+	Endpoint     string      `json:"endpoint"` // url for rpc endpoint
+	KeystorePath string      `json:"keystorePath"`
+	Opts         interface{} `json:"opts"`
 }
 
 func NewConfig() *Config {
