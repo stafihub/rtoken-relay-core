@@ -37,7 +37,7 @@ func (r *Router) Send(msg *Message) error {
 	r.lock.Lock()
 	defer r.lock.Unlock()
 
-	if msg.Reason != NewEra {
+	if msg.Reason != ReasonNewEra {
 		r.log.Trace("Routing message", "source", msg.Source, "dest", msg.Destination, "Reason", msg.Reason)
 	}
 

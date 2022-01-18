@@ -10,25 +10,28 @@ type Message struct {
 type Reason string
 
 const (
-	LiquidityBond       = Reason("LiquidityBond")
-	LiquidityBondResult = Reason("LiquidityBondResult")
+	ReasonLiquidityBondResult = Reason("LiquidityBondResult")
 
-	CurrentChainEra        = Reason("CurrentChainEra")
-	NewEra                 = Reason("NewEra")
-	BondedPools            = Reason("BondedPools")
-	EraPoolUpdated         = Reason("EraPoolUpdated")
-	InformChain            = Reason("InformChain")
-	BondReportEvent        = Reason("BondReportEvent")
-	ActiveReport           = Reason("ActiveReport")
-	ActiveReportedEvent    = Reason("ActiveReportedEvent")
-	WithdrawReportedEvent  = Reason("WithdrawReportedEvent")
-	TransferReportedEvent  = Reason("TransferReportedEvent")
-	NominationUpdatedEvent = Reason("NominationUpdatedEvent")
-	NewMultisig            = Reason("AsMulti")
-	MultisigExecuted       = Reason("MultisigExecuted")
-	GetEraNominated        = Reason("GetEraNominated")
-	//cosmos use
-	SubmitSignature       = Reason("SubmitSignature")
-	SignatureEnough       = Reason("SignatureEnough")
-	ValidatorUpdatedEvent = Reason("ValidatorUpdatedEvent")
+	ReasonCurrentChainEra  = Reason("CurrentChainEra")
+	ReasonNewEra           = Reason("NewEra")
+	ReasonBondedPools      = Reason("BondedPools")
+	ReasonInformChain      = Reason("InformChain")
+	ReasonActiveReport     = Reason("ActiveReport")
+	ReasonNewMultisig      = Reason("AsMulti")
+	ReasonMultisigExecuted = Reason("MultisigExecuted")
+	ReasonGetEraNominated  = Reason("GetEraNominated")
+	ReasonSubmitSignature  = Reason("SubmitSignature")
+
+	//need send when got event from stafi/stafihub chain
+	ReasonLiquidityBondEvent = Reason("LiquidityBondEvent")
+
+	ReasonEraPoolUpdatedEvent    = Reason("EraPoolUpdatedEvent")
+	ReasonBondReportedEvent      = Reason("BondReportedEvent")
+	ReasonActiveReportedEvent    = Reason("ActiveReportedEvent")
+	ReasonWithdrawReportedEvent  = Reason("WithdrawReportedEvent")
+	ReasonTransferReportedEvent  = Reason("TransferReportedEvent")
+	ReasonNominationUpdatedEvent = Reason("NominationUpdatedEvent")
+	ReasonSignatureEnoughEvent   = Reason("SignatureEnoughed")
+
+	ReasonValidatorUpdatedEvent = Reason("ValidatorUpdatedEvent")
 )
