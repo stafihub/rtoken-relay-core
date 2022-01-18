@@ -10,21 +10,26 @@ type Message struct {
 type Reason string
 
 const (
+
+	//need send from other chain
 	ReasonLiquidityBondResult = Reason("LiquidityBondResult")
+	ReasonBondReport          = Reason("BondReport")
+	ReasonActiveReport        = Reason("ActiveReport")
+	ReasonWithdrawReport      = Reason("WithdrawReport")
+	ReasonTransferReport      = Reason("TransferReport")
+	ReasonSubmitSignature     = Reason("SubmitSignature")
 
 	ReasonCurrentChainEra  = Reason("CurrentChainEra")
 	ReasonNewEra           = Reason("NewEra")
 	ReasonBondedPools      = Reason("BondedPools")
-	ReasonInformChain      = Reason("InformChain")
-	ReasonActiveReport     = Reason("ActiveReport")
 	ReasonNewMultisig      = Reason("AsMulti")
 	ReasonMultisigExecuted = Reason("MultisigExecuted")
 	ReasonGetEraNominated  = Reason("GetEraNominated")
-	ReasonSubmitSignature  = Reason("SubmitSignature")
 
-	//need send when got event from stafi/stafihub chain
+	//need send when got event from stafi chain
 	ReasonLiquidityBondEvent = Reason("LiquidityBondEvent")
 
+	//need send when got event from stafi/stafihub chain
 	ReasonEraPoolUpdatedEvent    = Reason("EraPoolUpdatedEvent")
 	ReasonBondReportedEvent      = Reason("BondReportedEvent")
 	ReasonActiveReportedEvent    = Reason("ActiveReportedEvent")
