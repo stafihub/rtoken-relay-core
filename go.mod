@@ -12,6 +12,7 @@ require (
 	github.com/stafiprotocol/go-sdk v1.3.1
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3
 	github.com/stafiprotocol/stafi-hub-relay-sdk v0.0.0-20220118171416-588fa97737ee
+	github.com/stafiprotocol/stafihub v0.0.0-00010101000000-000000000000
 	github.com/urfave/cli/v2 v2.3.0
 	golang.org/x/crypto v0.0.0-20210817164053-32db794688a5
 )
@@ -107,7 +108,6 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.8.1 // indirect
-	github.com/stafiprotocol/stafihub v0.0.0-00010101000000-000000000000 // indirect
 	github.com/stafiprotocol/tendermint v0.4.0 // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
 	github.com/subosito/gotenv v1.2.0 // indirect

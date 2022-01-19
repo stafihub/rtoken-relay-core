@@ -1,5 +1,9 @@
 package core
 
+import (
+	stafiHubXLedgerTypes "github.com/stafiprotocol/stafihub/x/ledger/types"
+)
+
 type Message struct {
 	Source      RSymbol
 	Destination RSymbol
@@ -40,3 +44,41 @@ const (
 
 	ReasonValidatorUpdatedEvent = Reason("ValidatorUpdatedEvent")
 )
+
+// msg data used in cosmos
+type EventEraPoolUpdated struct {
+	Denom       string
+	LastEra     string
+	CurrentEra  string
+	ShotId      string
+	LasterVoter string
+	Snapshot    stafiHubXLedgerTypes.BondSnapshot
+}
+
+type EventBondReported struct {
+	Denom       string
+	ShotId      string
+	LasterVoter string
+	Snapshot    stafiHubXLedgerTypes.BondSnapshot
+}
+
+type EventActiveReported struct {
+	Denom       string
+	ShotId      string
+	LasterVoter string
+	Snapshot    stafiHubXLedgerTypes.BondSnapshot
+}
+
+type EventWithdrawReported struct {
+	Denom       string
+	ShotId      string
+	LasterVoter string
+	Snapshot    stafiHubXLedgerTypes.BondSnapshot
+	PoolUnbond  stafiHubXLedgerTypes.PoolUnbond
+}
+
+type EventTransferReported struct {
+	Denom       string
+	ShotId      string
+	LasterVoter string
+}
