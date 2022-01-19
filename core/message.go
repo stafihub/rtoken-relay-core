@@ -84,12 +84,13 @@ type EventTransferReported struct {
 }
 
 // other chain -> stafihub msg data used in cosmos
-type ProposalLiquidityBond struct {
+type ProposalExeLiquidityBond struct {
 	Denom     string
 	Bonder    string
 	Pool      string
 	Blockhash string
 	Txhash    string
+	Amount    sdk.Int
 }
 
 type ProposalSetChainEra struct {
