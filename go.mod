@@ -11,7 +11,6 @@ require (
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-sdk v1.3.1
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3
-	github.com/stafiprotocol/stafi-hub-relay-sdk v0.0.0-20220119020450-b6ad622f19d0
 	github.com/stafiprotocol/stafihub v0.0.0-20220118075320-c95ccf0c0913
 	github.com/urfave/cli/v2 v2.3.0
 	golang.org/x/crypto v0.0.0-20210817164053-32db794688a5

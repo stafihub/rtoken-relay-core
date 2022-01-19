@@ -8,7 +8,6 @@ import (
 	log "github.com/ChainSafe/log15"
 	"github.com/stafiprotocol/rtoken-relay-core/config"
 	"github.com/stafiprotocol/rtoken-relay-core/core"
-	stafiHubChain "github.com/stafiprotocol/stafi-hub-relay-sdk/chain"
 	"github.com/urfave/cli/v2"
 )
 
@@ -128,7 +127,7 @@ func run(ctx *cli.Context) error {
 
 		switch chainConfig.Type {
 		case config.ChainTypeStafiHub:
-			newChain = stafiHubChain.NewChain()
+			// newChain = stafiHubChain.NewChain()
 			newChain.Initialize(&chainConfig, logger, sysErr)
 		case config.ChainTypeAtom:
 		default:
