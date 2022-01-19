@@ -1,6 +1,7 @@
 package core
 
 import (
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	stafiHubXLedgerTypes "github.com/stafiprotocol/stafihub/x/ledger/types"
 )
 
@@ -14,14 +15,13 @@ type Message struct {
 type Reason string
 
 const (
-
-	//need send from other chain
-	ReasonLiquidityBondResult = Reason("LiquidityBondResult")
-	ReasonBondReport          = Reason("BondReport")
-	ReasonActiveReport        = Reason("ActiveReport")
-	ReasonWithdrawReport      = Reason("WithdrawReport")
-	ReasonTransferReport      = Reason("TransferReport")
-	ReasonSubmitSignature     = Reason("SubmitSignature")
+	//send from other chain
+	ReasonExeLiquidityBond = Reason("ExeLiquidityBond")
+	ReasonBondReport       = Reason("BondReport")
+	ReasonActiveReport     = Reason("ActiveReport")
+	ReasonWithdrawReport   = Reason("WithdrawReport")
+	ReasonTransferReport   = Reason("TransferReport")
+	ReasonSubmitSignature  = Reason("SubmitSignature")
 
 	ReasonCurrentChainEra  = Reason("CurrentChainEra")
 	ReasonNewEra           = Reason("NewEra")
@@ -30,10 +30,10 @@ const (
 	ReasonMultisigExecuted = Reason("MultisigExecuted")
 	ReasonGetEraNominated  = Reason("GetEraNominated")
 
-	//need send when got event from stafi chain
+	//send when got event from stafi chain
 	ReasonLiquidityBondEvent = Reason("LiquidityBondEvent")
 
-	//need send when got event from stafi/stafihub chain
+	//send when got event from stafi/stafihub chain
 	ReasonEraPoolUpdatedEvent    = Reason("EraPoolUpdatedEvent")
 	ReasonBondReportedEvent      = Reason("BondReportedEvent")
 	ReasonActiveReportedEvent    = Reason("ActiveReportedEvent")
@@ -45,7 +45,7 @@ const (
 	ReasonValidatorUpdatedEvent = Reason("ValidatorUpdatedEvent")
 )
 
-// msg data used in cosmos
+// stafihub -> other chain msg data used in cosmos
 type EventEraPoolUpdated struct {
 	Denom       string
 	LastEra     string
@@ -81,4 +81,41 @@ type EventTransferReported struct {
 	Denom       string
 	ShotId      string
 	LasterVoter string
+}
+
+// other chain -> stafihub msg data used in cosmos
+type ProposalLiquidityBond struct {
+	Denom     string
+	Bonder    string
+	Pool      string
+	Blockhash string
+	Txhash    string
+}
+
+type ProposalSetChainEra struct {
+	Denom string
+	Era   uint32
+}
+
+type ProposalBondReport struct {
+	Denom  string
+	ShotId []byte
+	Action stafiHubXLedgerTypes.BondAction
+}
+
+type ProposalActiveReport struct {
+	Denom    string
+	ShotId   []byte
+	Staked   sdk.Int
+	Unstaked sdk.Int
+}
+
+type ProposalWithdrawReport struct {
+	Denom  string
+	ShotId []byte
+}
+
+type ProposalTransferReport struct {
+	Denom  string
+	ShotId []byte
 }
