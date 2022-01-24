@@ -5,6 +5,19 @@ import (
 	stafiHubXLedgerTypes "github.com/stafiprotocol/stafihub/x/ledger/types"
 )
 
+type OriginalTx string
+
+const (
+	OriginalTxDefault       = OriginalTx("default")
+	OriginalBond            = OriginalTx("Bond") //bond or unbond
+	OriginalUnbond          = OriginalTx("Unbond")
+	OriginalWithdrawUnbond  = OriginalTx("WithdrawUnbond")
+	OriginalWithdrawReward  = OriginalTx("WithdrawReward")
+	OriginalTransfer        = OriginalTx("Transfer")        //transfer
+	OriginalClaimRewards    = OriginalTx("ClaimRewards")    // claim
+	OriginalUpdateValidator = OriginalTx("UpdateValidator") // redelegate
+)
+
 type Message struct {
 	Source      RSymbol
 	Destination RSymbol
@@ -16,6 +29,7 @@ type Reason string
 
 const (
 	//send from other chain
+	ReasonNewEra           = Reason("NewEra")
 	ReasonExeLiquidityBond = Reason("ExeLiquidityBond")
 	ReasonBondReport       = Reason("BondReport")
 	ReasonActiveReport     = Reason("ActiveReport")
@@ -24,7 +38,6 @@ const (
 	ReasonSubmitSignature  = Reason("SubmitSignature")
 
 	ReasonCurrentChainEra  = Reason("CurrentChainEra")
-	ReasonNewEra           = Reason("NewEra")
 	ReasonBondedPools      = Reason("BondedPools")
 	ReasonNewMultisig      = Reason("AsMulti")
 	ReasonMultisigExecuted = Reason("MultisigExecuted")
@@ -45,7 +58,7 @@ const (
 	ReasonValidatorUpdatedEvent = Reason("ValidatorUpdatedEvent")
 )
 
-// stafihub -> other chain msg data used in cosmos
+// === stafihub -> other chain msg data used in cosmos
 type EventEraPoolUpdated struct {
 	Denom       string
 	LastEra     string
@@ -83,7 +96,7 @@ type EventTransferReported struct {
 	LasterVoter string
 }
 
-// other chain -> stafihub msg data used in cosmos
+// === other chain -> stafihub msg data used in cosmos
 type ProposalExeLiquidityBond struct {
 	Denom     string
 	Bonder    string
