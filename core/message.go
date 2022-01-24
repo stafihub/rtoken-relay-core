@@ -1,7 +1,11 @@
 package core
 
 import (
+	"encoding/binary"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/crypto"
 	stafiHubXLedgerTypes "github.com/stafiprotocol/stafihub/x/ledger/types"
 )
 
@@ -61,8 +65,8 @@ const (
 // === stafihub -> other chain msg data used in cosmos
 type EventEraPoolUpdated struct {
 	Denom       string
-	LastEra     string
-	CurrentEra  string
+	LastEra     uint32
+	CurrentEra  uint32
 	ShotId      string
 	LasterVoter string
 	Snapshot    stafiHubXLedgerTypes.BondSnapshot
@@ -94,6 +98,39 @@ type EventTransferReported struct {
 	Denom       string
 	ShotId      string
 	LasterVoter string
+}
+
+type SubmitSignatures struct {
+	Denom      string
+	Era        uint32
+	Pool       string
+	TxType     OriginalTx
+	ProposalId []byte
+	Signature  [][]byte
+	Threshold  uint32
+}
+
+func (ss *SubmitSignatures) EncodeToHash() (common.Hash, error) {
+
+	eraBts := make([]byte, 4)
+	binary.BigEndian.PutUint32(eraBts, ss.Era)
+
+	packed := make([]byte, 0)
+	packed = append(packed, []byte(ss.Denom)...)
+	packed = append(packed, eraBts...)
+	packed = append(packed, ss.Pool...)
+	packed = append(packed, []byte(ss.TxType)...)
+
+	return crypto.Keccak256Hash(packed), nil
+}
+
+type EvtSignatureEnough struct {
+	Denom      string
+	Era        uint32
+	Pool       string
+	TxType     OriginalTx
+	ProposalId []byte
+	Signatures [][]byte
 }
 
 // === other chain -> stafihub msg data used in cosmos
