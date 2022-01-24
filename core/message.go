@@ -15,10 +15,9 @@ const (
 	OriginalTxDefault       = OriginalTx("default")
 	OriginalBond            = OriginalTx("Bond") //bond or unbond
 	OriginalUnbond          = OriginalTx("Unbond")
-	OriginalWithdrawUnbond  = OriginalTx("WithdrawUnbond")
-	OriginalWithdrawReward  = OriginalTx("WithdrawReward")
+	OriginalWithdrawUnbond  = OriginalTx("WithdrawUnbond")  // used in substrate, because cosmos will auto return unbond token to staker
+	OriginalClaimRewards    = OriginalTx("ClaimRewards")    // claim and delegate reward token
 	OriginalTransfer        = OriginalTx("Transfer")        //transfer
-	OriginalClaimRewards    = OriginalTx("ClaimRewards")    // claim
 	OriginalUpdateValidator = OriginalTx("UpdateValidator") // redelegate
 )
 
@@ -84,6 +83,7 @@ type EventActiveReported struct {
 	ShotId      string
 	LasterVoter string
 	Snapshot    stafiHubXLedgerTypes.BondSnapshot
+	PoolUnbond  stafiHubXLedgerTypes.PoolUnbond
 }
 
 type EventWithdrawReported struct {
