@@ -43,6 +43,9 @@ const (
 	ReasonSignatureEnoughEvent   = Reason("SignatureEnoughed")
 
 	ReasonValidatorUpdatedEvent = Reason("ValidatorUpdatedEvent")
+
+	//get reason
+	ReasonGetPools = Reason("GetPools")
 )
 
 // === stafihub -> other chain msg data used in cosmos
@@ -140,4 +143,10 @@ type ProposalSubmitSignature struct {
 	TxType    stafiHubXLedgerTypes.OriginalTxType
 	PropId    []byte
 	Signature string
+}
+
+// get msg
+type GetPools struct {
+	Denom string
+	Pools chan []string
 }
