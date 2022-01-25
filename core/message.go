@@ -9,18 +9,6 @@ import (
 	stafiHubXLedgerTypes "github.com/stafiprotocol/stafihub/x/ledger/types"
 )
 
-type OriginalTx string
-
-const (
-	OriginalTxDefault       = OriginalTx("default")
-	OriginalBond            = OriginalTx("Bond") //bond or unbond
-	OriginalUnbond          = OriginalTx("Unbond")
-	OriginalWithdrawUnbond  = OriginalTx("WithdrawUnbond")  // used in substrate, because cosmos will auto return unbond token to staker
-	OriginalClaimRewards    = OriginalTx("ClaimRewards")    // claim and delegate reward token
-	OriginalTransfer        = OriginalTx("Transfer")        //transfer
-	OriginalUpdateValidator = OriginalTx("UpdateValidator") // redelegate
-)
-
 type Message struct {
 	Source      RSymbol
 	Destination RSymbol
@@ -104,7 +92,7 @@ type SubmitSignatures struct {
 	Denom      string
 	Era        uint32
 	Pool       string
-	TxType     OriginalTx
+	TxType     stafiHubXLedgerTypes.OriginalTxType
 	ProposalId []byte
 	Signature  [][]byte
 	Threshold  uint32
@@ -115,11 +103,14 @@ func (ss *SubmitSignatures) EncodeToHash() (common.Hash, error) {
 	eraBts := make([]byte, 4)
 	binary.BigEndian.PutUint32(eraBts, ss.Era)
 
+	txTypeBts := make([]byte, 4)
+	binary.BigEndian.PutUint32(txTypeBts, uint32(ss.TxType))
+
 	packed := make([]byte, 0)
 	packed = append(packed, []byte(ss.Denom)...)
 	packed = append(packed, eraBts...)
 	packed = append(packed, ss.Pool...)
-	packed = append(packed, []byte(ss.TxType)...)
+	packed = append(packed, txTypeBts...)
 
 	return crypto.Keccak256Hash(packed), nil
 }
@@ -128,7 +119,7 @@ type EvtSignatureEnough struct {
 	Denom      string
 	Era        uint32
 	Pool       string
-	TxType     OriginalTx
+	TxType     stafiHubXLedgerTypes.OriginalTxType
 	ProposalId []byte
 	Signatures [][]byte
 }

@@ -2,5 +2,6 @@ package core
 
 const (
 	//stafi hub
-	HubRFIS = RSymbol("HubRFIS")
+	HubRFIS  = RSymbol("RFIS")
+	HubRATOM = RSymbol("RATOM")
 )

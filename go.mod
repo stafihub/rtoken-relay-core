@@ -11,7 +11,7 @@ require (
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-sdk v1.3.1
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3
-	github.com/stafiprotocol/stafihub v0.0.0-20220118075320-c95ccf0c0913
+	github.com/stafiprotocol/stafihub v0.0.0-20220125053843-0f6188bdda32
 	github.com/urfave/cli/v2 v2.3.0
 	golang.org/x/crypto v0.0.0-20210817164053-32db794688a5
 )
@@ -123,7 +123,7 @@ require (
 	golang.org/x/sys v0.0.0-20210903071746-97244b99971b // indirect
 	golang.org/x/term v0.0.0-20210220032956-6a3ed077a48d // indirect
 	golang.org/x/text v0.3.6 // indirect
-	google.golang.org/genproto v0.0.0-20211208223120-3a66f561d7aa // indirect
+	google.golang.org/genproto v0.0.0-20220118154757-00ab72f36ad5 // indirect
 	google.golang.org/grpc v1.43.0 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/ini.v1 v1.63.2 // indirect
