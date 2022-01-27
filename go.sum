@@ -84,6 +84,8 @@ github.com/DataDog/zstd v1.4.1/go.mod h1:1jcaCB/ufaK+sKp1NBhlGmpz41jOoPQ35bpF36t
 github.com/DataDog/zstd v1.4.5 h1:EndNeuB0l9syBZhut0wns3gV1hL8zX8LIu6ZiVHWLIQ=
 github.com/DataDog/zstd v1.4.5/go.mod h1:1jcaCB/ufaK+sKp1NBhlGmpz41jOoPQ35bpF36t7BBo=
 github.com/Djarvur/go-err113 v0.0.0-20210108212216-aea10b59be24/go.mod h1:4UJr5HIiMZrwgkSPdsjy2uOQExX/WEILpIrO9UPGuXs=
+github.com/JFJun/go-substrate-crypto v1.0.1 h1:Gh9ix3vbhiJRSIk+ztRLZVz3XY2zOhGFWzO33lMKzfc=
+github.com/JFJun/go-substrate-crypto v1.0.1/go.mod h1:VGsUKSN8QuqKcp2lzO3oFXndyqhE9YIOy6iD6Sl9AD0=
 github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible/go.mod h1:r7JcOSlj0wfOMncg0iLm8Leh48TZaKVeNIfJntJ2wa0=
 github.com/Masterminds/goutils v1.1.0/go.mod h1:8cTjp+g8YejhMuvIA5y2vz3BpJxksy863GQaJW2MFNU=
 github.com/Masterminds/semver v1.4.2/go.mod h1:MB6lktGJrhw8PrUyiEoblNEGEQ+RzHPF078ddwwvV3Y=
@@ -272,6 +274,7 @@ github.com/cosmos/ledger-cosmos-go v0.11.1 h1:9JIYsGnXP613pb2vPjFeMMjBI5lEDsEaF6
 github.com/cosmos/ledger-cosmos-go v0.11.1/go.mod h1:J8//BsAGTo3OC/vDLjMRFLW6q0WAaXvHnVc7ZmE8iUY=
 github.com/cosmos/ledger-go v0.9.2 h1:Nnao/dLwaVTk1Q5U9THldpUMMXU94BOTWPddSmVB6pI=
 github.com/cosmos/ledger-go v0.9.2/go.mod h1:oZJ2hHAZROdlHiwTg4t7kP+GKIIkBT+o6c9QWFanOyI=
+github.com/cpacia/bchutil v0.0.0-20181003130114-b126f6a35b6c/go.mod h1:k5D13LCXSsMrQyfdW0yGYs4GWUvirqoxHht8qwtqyRY=
 github.com/cpuguy83/go-md2man v1.0.10 h1:BSKMNlYxDvnunlTymqtgONjNnaRV1sTpcovwwjF22jk=
 github.com/cpuguy83/go-md2man v1.0.10/go.mod h1:SmD6nW6nTyfqj6ABTjUi3V3JVMnlJmwcJI5acqYI6dE=
 github.com/cpuguy83/go-md2man/v2 v2.0.0-20190314233015-f79a8a8ca69d/go.mod h1:maD7wRr/U5Z6m/iR4s+kqSMx2CaBsrgA7czyZG/E6dU=
@@ -350,6 +353,7 @@ github.com/envoyproxy/protoc-gen-validate v0.0.14/go.mod h1:iSmxcyjqTsJpI2R4NaDN
 github.com/envoyproxy/protoc-gen-validate v0.1.0/go.mod h1:iSmxcyjqTsJpI2R4NaDN7+kN2VEUnK/pcBlmesArF7c=
 github.com/esimonov/ifshort v1.0.2/go.mod h1:yZqNJUrNn20K8Q9n2CrjTKYyVEmX209Hgu+M1LBpeZE=
 github.com/ethereum/go-ethereum v1.9.21/go.mod h1:RXAVzbGrSGmDkDnHymruTAIEjUR3E4TX0EOpaj702sI=
+github.com/ethereum/go-ethereum v1.9.24/go.mod h1:JIfVb6esrqALTExdz9hRYvrP0xBDf6wCncIu1hNwHpM=
 github.com/ethereum/go-ethereum v1.9.25/go.mod h1:vMkFiYLHI4tgPw4k2j4MHKoovchFE8plZ0M9VMk4/oM=
 github.com/ethereum/go-ethereum v1.10.6/go.mod h1:iY/t0vHSmaAOC+xlqvAAeHdGSWNFkfSnN0OhMTDYz90=
 github.com/ethereum/go-ethereum v1.10.15 h1:E9o0kMbD8HXhp7g6UwIwntY05WTDheCGziMhegcBsQw=
@@ -1129,14 +1133,20 @@ github.com/spf13/viper v1.8.1/go.mod h1:o0Pch8wJ9BVSWGQMbra6iw0oQ5oktSIBaujf1rJH
 github.com/ssgreg/nlreturn/v2 v2.1.0/go.mod h1:E/iiPB78hV7Szg2YfRgyIrk1AD6JVMTRkkxBiELzh2I=
 github.com/stafiprotocol/chainbridge v1.0.0 h1:CT5ActFpHt4WEw+VvcCNw/bTLVrrnxK348ro5r0GMds=
 github.com/stafiprotocol/chainbridge v1.0.0/go.mod h1:yJs9Zg9VbF6QtDO5a+CsfwQCcL9PojKWnCd040JRWlE=
+github.com/stafiprotocol/cosmos-relay-sdk v0.0.0-20220127015926-dbea5aac3f16 h1:0YFI33wEVsLP3tUQA083+KrAI6nW5DSdyDHf1BS9+MQ=
+github.com/stafiprotocol/cosmos-relay-sdk v0.0.0-20220127015926-dbea5aac3f16/go.mod h1:3xVgc7TU+4ggzce8BSJd4KP8gNcb7amQTV0aT7KKYXQ=
 github.com/stafiprotocol/go-sdk v1.3.1 h1:OOM0QVoq6mg74WuE+HYUof1SvYGwhnmIsx60cBkq+O8=
 github.com/stafiprotocol/go-sdk v1.3.1/go.mod h1:0cSLieEImXu7mV7n7RkDvG3plekjdxfLVAqN2zTjdWk=
 github.com/stafiprotocol/go-substrate-rpc-client v1.0.9/go.mod h1:P3xucNyw6UjKvCvGg0eiQJhcRyZsUv5a9akxDTLMHFk=
 github.com/stafiprotocol/go-substrate-rpc-client v1.1.3 h1:wtRc1AKjdgvAuy6Uxl/yXxd4bhoEfZonpttligceYyY=
 github.com/stafiprotocol/go-substrate-rpc-client v1.1.3/go.mod h1:P3xucNyw6UjKvCvGg0eiQJhcRyZsUv5a9akxDTLMHFk=
+github.com/stafiprotocol/rtoken-relay-core v0.0.0-20220125122451-43cfea415c20/go.mod h1:aFRMkhXZAdFOEi1UeXmKwabdZEu5bJAytvck2CnkToM=
 github.com/stafiprotocol/solana-go-sdk v1.0.0/go.mod h1:l17jYuPW1VS1hL5qjlayYsMTrla9wEJHLyGtzFGhmHE=
-github.com/stafiprotocol/stafihub v0.0.0-20220125053843-0f6188bdda32 h1:rHYFeOO6JyZivP2lVfYaac/SiriuAkGMm1uVlzYghUU=
+github.com/stafiprotocol/stafi-hub-relay-sdk v0.0.0-20220125125302-58fafdc3353e h1:kodQmmXQgZ88LzNSYzjqN//Q+Vr1gGUVab0U4W9rW3U=
+github.com/stafiprotocol/stafi-hub-relay-sdk v0.0.0-20220125125302-58fafdc3353e/go.mod h1:kn7Ut0vubRlDnUjHZAGBMDYW2YhGoaicfD1MClqvL1E=
 github.com/stafiprotocol/stafihub v0.0.0-20220125053843-0f6188bdda32/go.mod h1:09q1X1vTnjBrgt4ELNhKf6dZHuX7PLVn/sMauEgswEQ=
+github.com/stafiprotocol/stafihub v0.0.0-20220125073324-fc0d65a0d8fb h1:7OMbxGIlaxzzbJAllgz+D66O9lZgYNxXCR27H31Ul3o=
+github.com/stafiprotocol/stafihub v0.0.0-20220125073324-fc0d65a0d8fb/go.mod h1:09q1X1vTnjBrgt4ELNhKf6dZHuX7PLVn/sMauEgswEQ=
 github.com/stafiprotocol/tendermint v0.4.0 h1:d9RzVqQZtrW9T0CmXtT+oRPk+z4qodJqp0es0amCCqY=
 github.com/stafiprotocol/tendermint v0.4.0/go.mod h1:N143eVlQH4wm3hnT1oMl5NhBlYE7vniyUjd/8IgANG0=
 github.com/status-im/keycard-go v0.0.0-20190316090335-8537d3370df4/go.mod h1:RZLeN1LMWmRsyYjvAu+I6Dm9QmlDaIIt+Y+4Kd7Tp+Q=

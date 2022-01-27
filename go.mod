@@ -9,9 +9,11 @@ require (
 	github.com/ethereum/go-ethereum v1.10.15
 	github.com/spf13/cobra v1.2.1
 	github.com/stafiprotocol/chainbridge v1.0.0
+	github.com/stafiprotocol/cosmos-relay-sdk v0.0.0-20220127015926-dbea5aac3f16
 	github.com/stafiprotocol/go-sdk v1.3.1
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3
-	github.com/stafiprotocol/stafihub v0.0.0-20220125053843-0f6188bdda32
+	github.com/stafiprotocol/stafi-hub-relay-sdk v0.0.0-20220125125302-58fafdc3353e
+	github.com/stafiprotocol/stafihub v0.0.0-20220125073324-fc0d65a0d8fb
 	github.com/urfave/cli/v2 v2.3.0
 	golang.org/x/crypto v0.0.0-20210817164053-32db794688a5
 )

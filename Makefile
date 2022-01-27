@@ -40,7 +40,7 @@ lint-fix:
 build:
 	@echo "  >  \033[32mBuilding binary...\033[0m "
 	cd cmd/relay && go build -o ../../build/relay
-	cd cmd/genstafi && go build -o ../../build/genstafi
+	cd cmd/keytool && go build -o ../../build/keytool
 
 install:
 	@echo "  >  \033[32mInstalling rtoken-relay...\033[0m "

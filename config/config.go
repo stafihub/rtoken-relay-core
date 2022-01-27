@@ -19,17 +19,17 @@ const defaultKeystorePath = "./keys"
 var (
 	ChainTypeStafiHub  = "stafiHub"
 	ChainTypeSubstrate = "substrate"
-	ChainTypeAtom      = "atom"
+	ChainTypeCosmosHub = "cosmosHub"
 	ChainTypeSolana    = "solana"
 	ChainTypeEthereum  = "ethereum"
-	ChainTypeBnb       = "bnb"
+	ChainTypeBinance   = "binance"
 
 	ChainTypeSupport = map[string]bool{
 		ChainTypeSubstrate: true,
-		ChainTypeAtom:      true,
+		ChainTypeCosmosHub: true,
 		ChainTypeSolana:    true,
 		ChainTypeEthereum:  true,
-		ChainTypeBnb:       true,
+		ChainTypeBinance:   true,
 	}
 )
 

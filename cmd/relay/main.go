@@ -6,8 +6,10 @@ import (
 	"strconv"
 
 	log "github.com/ChainSafe/log15"
+	cosmosChain "github.com/stafiprotocol/cosmos-relay-sdk/chain"
 	"github.com/stafiprotocol/rtoken-relay-core/config"
 	"github.com/stafiprotocol/rtoken-relay-core/core"
+	stafiHubChain "github.com/stafiprotocol/stafi-hub-relay-sdk/chain"
 	"github.com/urfave/cli/v2"
 )
 
@@ -55,9 +57,9 @@ var accountCommand = cli.Command{
 		{
 			Action:      handleGenerateBcCmd,
 			Name:        "genbc",
-			Usage:       "generate bc chain keystore",
+			Usage:       "generate binance chain keystore",
 			Flags:       bncGenerateFlags,
-			Description: "The generate subcommand is used to generate the bc chain keystore.",
+			Description: "The generate subcommand is used to generate the binance chain keystore.",
 		},
 	},
 }
@@ -127,9 +129,11 @@ func run(ctx *cli.Context) error {
 
 		switch chainConfig.Type {
 		case config.ChainTypeStafiHub:
-			// newChain = stafiHubChain.NewChain()
+			newChain = stafiHubChain.NewChain()
 			newChain.Initialize(&chainConfig, logger, sysErr)
-		case config.ChainTypeAtom:
+		case config.ChainTypeCosmosHub:
+			newChain = cosmosChain.NewChain()
+			newChain.Initialize(&chainConfig, logger, sysErr)
 		default:
 			return errors.New("unsupport Chain Type")
 		}
