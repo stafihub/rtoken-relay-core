@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/client/keys"
@@ -8,10 +10,10 @@ import (
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 	xAuthTypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/spf13/cobra"
-	"os"
 )
 
-const DefaultHomeDir = "./keys/safi_hub"
+const StafiHubDefaultHomeDir = "./keys/safi_hub"
+const CosmosHubDefaultHomeDir = "./keys/cosmos_hub"
 
 func main() {
 	encodingConfig := MakeEncodingConfig()
@@ -22,11 +24,10 @@ func main() {
 		WithLegacyAmino(encodingConfig.Amino).
 		WithInput(os.Stdin).
 		WithAccountRetriever(xAuthTypes.AccountRetriever{}).
-		WithBroadcastMode(flags.BroadcastBlock).
-		WithHomeDir(DefaultHomeDir).WithKeyringOptions()
+		WithBroadcastMode(flags.BroadcastBlock)
 
 	rootCmd := &cobra.Command{
-		Use:   "keys tool",
+		Use:   "keytool",
 		Short: "tool to manage keys",
 	}
 	genStafiCmd := &cobra.Command{
@@ -34,6 +35,7 @@ func main() {
 		Short: "tool to manage stafi-hub keys",
 		Long:  "Notice: The keyring supports os|file|test backends, but relay now only support the file backend",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
+			initClientCtx = initClientCtx.WithHomeDir(StafiHubDefaultHomeDir).WithKeyringOptions()
 			SetPrefixes("fis")
 			if err := client.SetCmdClientContextHandler(initClientCtx, cmd); err != nil {
 				return err
@@ -42,13 +44,14 @@ func main() {
 			return server.InterceptConfigsPreRunHandler(cmd, "", nil)
 		},
 	}
-	genStafiCmd.AddCommand(keys.Commands(DefaultHomeDir))
+	genStafiCmd.AddCommand(keys.Commands(StafiHubDefaultHomeDir))
 
 	genCosmosCmd := &cobra.Command{
 		Use:   "gencosmos",
 		Short: "tool to manage cosmos-hub keys",
 		Long:  "Notice: The keyring supports os|file|test backends, but relay now only support the file backend",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
+			initClientCtx = initClientCtx.WithHomeDir(CosmosHubDefaultHomeDir).WithKeyringOptions()
 			SetPrefixes("cosmos")
 			if err := client.SetCmdClientContextHandler(initClientCtx, cmd); err != nil {
 				return err
@@ -57,10 +60,10 @@ func main() {
 			return server.InterceptConfigsPreRunHandler(cmd, "", nil)
 		},
 	}
-	genCosmosCmd.AddCommand(keys.Commands(DefaultHomeDir))
+	genCosmosCmd.AddCommand(keys.Commands(CosmosHubDefaultHomeDir))
 
 	rootCmd.AddCommand(genStafiCmd)
 	rootCmd.AddCommand(genCosmosCmd)
 
-	svrcmd.Execute(rootCmd, DefaultHomeDir)
+	svrcmd.Execute(rootCmd, "")
 }
