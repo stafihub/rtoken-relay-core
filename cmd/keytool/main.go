@@ -12,8 +12,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
-const StafiHubDefaultHomeDir = "./keys/safi_hub"
-const CosmosHubDefaultHomeDir = "./keys/cosmos_hub"
+const StafiHubDefaultHomeDir = "./keys/safihub"
+const CosmosHubDefaultHomeDir = "./keys/cosmoshub"
 
 func main() {
 	encodingConfig := MakeEncodingConfig()

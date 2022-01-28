@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"os"
 	"strconv"
 
@@ -127,17 +128,20 @@ func run(ctx *cli.Context) error {
 		var newChain core.Chain
 		logger := log.Root().New("chain", chainConfig.Name)
 
+		var err error
 		switch chainConfig.Type {
 		case config.ChainTypeStafiHub:
 			newChain = stafiHubChain.NewChain()
-			newChain.Initialize(&chainConfig, logger, sysErr)
+			err = newChain.Initialize(&chainConfig, logger, sysErr)
 		case config.ChainTypeCosmosHub:
 			newChain = cosmosChain.NewChain()
-			newChain.Initialize(&chainConfig, logger, sysErr)
+			err = newChain.Initialize(&chainConfig, logger, sysErr)
 		default:
 			return errors.New("unsupport Chain Type")
 		}
-
+		if err != nil {
+			return fmt.Errorf("newChain.Initialize failed: %s", err)
+		}
 		c.AddChain(newChain)
 	}
 

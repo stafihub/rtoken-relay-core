@@ -1,0 +1,38 @@
+{
+  "chains": [
+    {
+      "name": "stafi-hub",
+      "type": "stafiHub",
+      "endpoint": "http://127.0.0.1:26657",
+      "rsymbol": "RFIS",
+      "keystorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/keys/stafihub",
+      "opts": {
+        "blockstorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/blockstore",
+        "startBlock": 50,
+        "chainId": "my-chain",
+        "denom": "stake",
+        "gasPrice": "0.00001stake",
+        "account": "relay1",
+        "caredSymbol": "ratom2"
+      }
+    },
+    {
+      "name": "cosmos-hub",
+      "type": "cosmosHub",
+      "endpoint": "http://127.0.0.1:36657",
+      "rsymbol": "ratom2",
+      "keystorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/keys/cosmoshub",
+      "opts": {
+        "blockstorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/blockstore",
+        "startBlock": 50,
+        "chainId": "my-chain2",
+        "denom": "stake",
+        "gasPrice": "0.00001stake",
+        "eraSeconds": 600,
+        "pools": {
+          "multisig1": "key1"
+        }
+      }
+    }
+  ]
+}
