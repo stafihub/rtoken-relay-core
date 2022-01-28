@@ -2,15 +2,9 @@ module github.com/stafiprotocol/rtoken-relay-core/common
 
 go 1.17
 
-replace (
-	github.com/99designs/keyring => github.com/cosmos/keyring v1.1.6
-	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
-	github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
-)
-
 require (
 	github.com/ChainSafe/log15 v1.0.0
-	github.com/cosmos/cosmos-sdk v0.45.0
+	github.com/cosmos/cosmos-sdk v0.44.5
 	github.com/ethereum/go-ethereum v1.10.15
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3
@@ -117,4 +111,10 @@ require (
 	gopkg.in/ini.v1 v1.63.2 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+)
+
+replace (
+	github.com/99designs/keyring => github.com/cosmos/keyring v1.1.6
+	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
+	github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
 )

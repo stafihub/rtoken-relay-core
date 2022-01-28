@@ -8,7 +8,7 @@
       "keystorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/keys/stafihub",
       "opts": {
         "blockstorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/blockstore",
-        "startBlock": 50,
+        "startBlock": 3000,
         "chainId": "my-chain",
         "denom": "stake",
         "gasPrice": "0.00001stake",

@@ -2,22 +2,16 @@ module cmd
 
 go 1.17
 
-replace (
-	github.com/99designs/keyring => github.com/cosmos/keyring v1.1.6
-	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
-	github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
-)
-
 require (
 	github.com/ChainSafe/log15 v1.0.0
 	github.com/cosmos/cosmos-sdk v0.45.0
 	github.com/cosmos/ibc-go v1.2.5
 	github.com/spf13/cobra v1.2.1
 	github.com/stafiprotocol/chainbridge v1.0.0
-	github.com/stafiprotocol/cosmos-relay-sdk v0.0.0-20220128034224-d08f9be65676
+	github.com/stafiprotocol/cosmos-relay-sdk v0.0.0-20220128090656-3b16910b99a8
 	github.com/stafiprotocol/go-sdk v1.3.1
-	github.com/stafiprotocol/rtoken-relay-core/common v0.0.0-20220128033239-286aa5d19864
-	github.com/stafiprotocol/stafi-hub-relay-sdk v0.0.0-20220128034101-2398c3b330c0
+	github.com/stafiprotocol/rtoken-relay-core/common v0.0.0-20220128063337-6798cbbaa06b
+	github.com/stafiprotocol/stafi-hub-relay-sdk v0.0.0-20220128090718-a8b21bbccc92
 	github.com/urfave/cli/v2 v2.3.0
 )
 
@@ -114,7 +108,7 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.8.1 // indirect
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3 // indirect
-	github.com/stafiprotocol/stafihub v0.0.0-20220125073324-fc0d65a0d8fb // indirect
+	github.com/stafiprotocol/stafihub v0.0.0-20220126135208-b40519620a74 // indirect
 	github.com/stafiprotocol/tendermint v0.4.0 // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
 	github.com/subosito/gotenv v1.2.0 // indirect
@@ -139,4 +133,11 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 	nhooyr.io/websocket v1.8.6 // indirect
+)
+
+replace (
+	github.com/99designs/keyring => github.com/cosmos/keyring v1.1.6
+	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
+	github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
+	github.com/stafiprotocol/stafi-hub-relay-sdk => /Users/tpkeeper/gowork/stafi/stafi-hub-relay-sdk
 )
