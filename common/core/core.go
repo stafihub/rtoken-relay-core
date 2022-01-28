@@ -7,9 +7,11 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
+	"sync"
 	"syscall"
 
 	"github.com/ChainSafe/log15"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 type Core struct {
@@ -66,4 +68,36 @@ func (c *Core) Start() {
 
 func (c *Core) Errors() <-chan error {
 	return c.sysErr
+}
+
+var sdkContextMutex sync.Mutex
+
+// UseSDKContext uses a custom Bech32 account prefix and returns a restore func
+// CONTRACT: When using this function, caller must ensure that lock contention
+// doesn't cause program to hang. This function is only for use in codec calls
+func UseSdkConfigContext(accountPrefix string) func() {
+	// Ensure we're the only one using the global context,
+	// lock context to begin function
+	sdkContextMutex.Lock()
+
+	// Mutate the sdkConf
+	setPrefixes(accountPrefix)
+	// Return the unlock function, caller must lock and ensure that lock is released
+	// before any other function needs to use c.UseSDKContext
+	return sdkContextMutex.Unlock
+}
+
+func setPrefixes(accountAddressPrefix string) {
+	// Set prefixes
+	accountPubKeyPrefix := accountAddressPrefix + "pub"
+	validatorAddressPrefix := accountAddressPrefix + "valoper"
+	validatorPubKeyPrefix := accountAddressPrefix + "valoperpub"
+	consNodeAddressPrefix := accountAddressPrefix + "valcons"
+	consNodePubKeyPrefix := accountAddressPrefix + "valconspub"
+
+	// Set config
+	config := sdk.GetConfig()
+	config.SetBech32PrefixForAccount(accountAddressPrefix, accountPubKeyPrefix)
+	config.SetBech32PrefixForValidator(validatorAddressPrefix, validatorPubKeyPrefix)
+	config.SetBech32PrefixForConsensusNode(consNodeAddressPrefix, consNodePubKeyPrefix)
 }
