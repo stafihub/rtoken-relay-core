@@ -16,7 +16,7 @@ import (
 	"github.com/stafiprotocol/chainbridge/utils/keystore"
 	bnctypes "github.com/stafiprotocol/go-sdk/common/types"
 	bnckeys "github.com/stafiprotocol/go-sdk/keys"
-	"github.com/stafiprotocol/rtoken-relay-core/config"
+	"github.com/stafiprotocol/rtoken-relay-core/common/config"
 	"github.com/urfave/cli/v2"
 )
 

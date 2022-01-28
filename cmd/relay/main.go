@@ -8,8 +8,8 @@ import (
 
 	log "github.com/ChainSafe/log15"
 	cosmosChain "github.com/stafiprotocol/cosmos-relay-sdk/chain"
-	"github.com/stafiprotocol/rtoken-relay-core/config"
-	"github.com/stafiprotocol/rtoken-relay-core/core"
+	"github.com/stafiprotocol/rtoken-relay-core/common/config"
+	"github.com/stafiprotocol/rtoken-relay-core/common/core"
 	stafiHubChain "github.com/stafiprotocol/stafi-hub-relay-sdk/chain"
 	"github.com/urfave/cli/v2"
 )
