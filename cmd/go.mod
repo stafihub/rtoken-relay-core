@@ -10,7 +10,7 @@ require (
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/cosmos-relay-sdk v0.0.0-20220128090656-3b16910b99a8
 	github.com/stafiprotocol/go-sdk v1.3.1
-	github.com/stafiprotocol/rtoken-relay-core/common v0.0.0-20220128093945-d3a682ce6f3d
+	github.com/stafiprotocol/rtoken-relay-core/common v0.0.0-20220129031937-21f2c71ea098
 	github.com/stafiprotocol/stafi-hub-relay-sdk v0.0.0-20220128090718-a8b21bbccc92
 	github.com/urfave/cli/v2 v2.3.0
 )
