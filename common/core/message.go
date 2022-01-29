@@ -135,8 +135,7 @@ type ProposalTransferReport struct {
 	ShotId []byte
 }
 
-type ProposalSubmitSignature struct {
-	Creator   string
+type ParamSubmitSignature struct {
 	Denom     string
 	Era       uint32
 	Pool      string
@@ -146,7 +145,7 @@ type ProposalSubmitSignature struct {
 }
 
 // get msg
-type GetPools struct {
+type ParamGetPools struct {
 	Denom string
 	Pools chan []string
 }

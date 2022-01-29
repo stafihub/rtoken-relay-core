@@ -8,7 +8,7 @@ require (
 	github.com/ethereum/go-ethereum v1.10.15
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3
-	github.com/stafiprotocol/stafihub v0.0.0-20220125073324-fc0d65a0d8fb
+	github.com/stafiprotocol/stafihub v0.0.0-20220128142239-2403db65977a
 	github.com/urfave/cli/v2 v2.3.0
 	golang.org/x/crypto v0.0.0-20220126234351-aa10faf2a1f8
 )
