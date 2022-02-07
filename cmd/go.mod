@@ -108,7 +108,7 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.8.1 // indirect
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3 // indirect
-	github.com/stafiprotocol/stafihub v0.0.0-20220128142239-2403db65977a // indirect
+	github.com/stafiprotocol/stafihub v0.0.0-20220207073311-2f4837ede803 // indirect
 	github.com/stafiprotocol/tendermint v0.4.0 // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
 	github.com/subosito/gotenv v1.2.0 // indirect
