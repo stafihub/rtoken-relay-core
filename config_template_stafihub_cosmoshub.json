@@ -31,7 +31,10 @@
         "eraSeconds": 600,
         "pools": {
           "multisig1": "key1"
-        }
+        },
+        "targetValidators": [
+          "cosmosvaloper129kf5egy80e8me93lg3h5lk54kp0tle7w9npre"
+        ]
       }
     }
   ]

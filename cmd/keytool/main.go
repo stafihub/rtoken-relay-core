@@ -12,7 +12,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-const StafiHubDefaultHomeDir = "./keys/safihub"
+const StafiHubDefaultHomeDir = "./keys/stafihub"
 const CosmosHubDefaultHomeDir = "./keys/cosmoshub"
 
 func main() {
