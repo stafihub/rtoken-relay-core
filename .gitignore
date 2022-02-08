@@ -42,3 +42,4 @@ bnb*.json
 relay_log*.json
 datas/
 config_template_cosmos2.json
+config_template_stafihub_cosmoshub2.json

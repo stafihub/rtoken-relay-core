@@ -1147,6 +1147,8 @@ github.com/stafiprotocol/stafihub v0.0.0-20220128142239-2403db65977a h1:abTDJzGv
 github.com/stafiprotocol/stafihub v0.0.0-20220128142239-2403db65977a/go.mod h1:09q1X1vTnjBrgt4ELNhKf6dZHuX7PLVn/sMauEgswEQ=
 github.com/stafiprotocol/stafihub v0.0.0-20220207073311-2f4837ede803 h1:NZI5Dksu38U2t0nxqENvIKjiK/T5fWt8mfFDjvfw/Ok=
 github.com/stafiprotocol/stafihub v0.0.0-20220207073311-2f4837ede803/go.mod h1:09q1X1vTnjBrgt4ELNhKf6dZHuX7PLVn/sMauEgswEQ=
+github.com/stafiprotocol/stafihub v0.0.0-20220208022429-af77c2d8575b h1:OoEmTUCPTDuZTMXSV6zoZ2ku1v5dwJ+VlW/vBMLT620=
+github.com/stafiprotocol/stafihub v0.0.0-20220208022429-af77c2d8575b/go.mod h1:09q1X1vTnjBrgt4ELNhKf6dZHuX7PLVn/sMauEgswEQ=
 github.com/stafiprotocol/tendermint v0.4.0 h1:d9RzVqQZtrW9T0CmXtT+oRPk+z4qodJqp0es0amCCqY=
 github.com/stafiprotocol/tendermint v0.4.0/go.mod h1:N143eVlQH4wm3hnT1oMl5NhBlYE7vniyUjd/8IgANG0=
 github.com/status-im/keycard-go v0.0.0-20190316090335-8537d3370df4/go.mod h1:RZLeN1LMWmRsyYjvAu+I6Dm9QmlDaIIt+Y+4Kd7Tp+Q=

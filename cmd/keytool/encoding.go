@@ -65,19 +65,6 @@ func makeEncodingConfig() EncodingConfig {
 	}
 }
 
-func marshalSignatureJSON(txConfig client.TxConfig, txBldr client.TxBuilder, signatureOnly bool) ([]byte, error) {
-	parsedTx := txBldr.GetTx()
-	if signatureOnly {
-		sigs, err := parsedTx.GetSignaturesV2()
-		if err != nil {
-			return nil, err
-		}
-		return txConfig.MarshalSignatureJSON(sigs)
-	}
-
-	return txConfig.TxJSONEncoder()(parsedTx)
-}
-
 func SetPrefixes(accountAddressPrefix string) {
 	// Set prefixes
 	accountPubKeyPrefix := accountAddressPrefix + "pub"
