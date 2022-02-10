@@ -257,6 +257,7 @@ github.com/cosmos/iavl v0.15.3/go.mod h1:OLjQiAQ4fGD2KDZooyJG9yz+p2ao2IAYSbke8mV
 github.com/cosmos/iavl v0.17.1/go.mod h1:7aisPZK8yCpQdy3PMvKeO+bhq1NwDjUwjzxwwROUxFk=
 github.com/cosmos/iavl v0.17.3 h1:s2N819a2olOmiauVa0WAhoIJq9EhSXE9HDBAoR9k+8Y=
 github.com/cosmos/iavl v0.17.3/go.mod h1:prJoErZFABYZGDHka1R6Oay4z9PrNeFFiMKHDAMOi4w=
+github.com/cosmos/ibc-go v1.2.2 h1:bs6TZ8Es1kycIu2AHlRZ9dzJ+mveqlLN/0sjWtRH88o=
 github.com/cosmos/ibc-go v1.2.2/go.mod h1:XmYjsRFOs6Q9Cz+CSsX21icNoH27vQKb3squgnCOCbs=
 github.com/cosmos/keyring v1.1.6 h1:AXKMQB29ribVBqoJL9TRgWEa7zzawB8xl3wKNZmXrdo=
 github.com/cosmos/keyring v1.1.6/go.mod h1:16e0ds7LGQQcT59QqkTg72Hh5ShM51Byv5PEmW6uoRU=
@@ -1091,18 +1092,14 @@ github.com/spf13/viper v1.7.1/go.mod h1:8WkrPz2fc9jxqZNCJI/76HCieCp4Q8HaLFoCha5q
 github.com/spf13/viper v1.8.1 h1:Kq1fyeebqsBfbjZj4EL7gj2IO0mMaiyjYUWcUsl2O44=
 github.com/spf13/viper v1.8.1/go.mod h1:o0Pch8wJ9BVSWGQMbra6iw0oQ5oktSIBaujf1rJH9Ns=
 github.com/ssgreg/nlreturn/v2 v2.1.0/go.mod h1:E/iiPB78hV7Szg2YfRgyIrk1AD6JVMTRkkxBiELzh2I=
+github.com/stafihub/stafihub v0.0.0-20220209165340-5b4ac219fb84 h1:fKGx0+TyIHl+4VmyRDiIj0glPIsS5Zh1bXeYPHNQueY=
+github.com/stafihub/stafihub v0.0.0-20220209165340-5b4ac219fb84/go.mod h1:Kz6KCLISDVsQ+AmyiDr1TlqXU64MIwiFJoRCnwUTh4k=
 github.com/stafiprotocol/chainbridge v1.0.0 h1:CT5ActFpHt4WEw+VvcCNw/bTLVrrnxK348ro5r0GMds=
 github.com/stafiprotocol/chainbridge v1.0.0/go.mod h1:yJs9Zg9VbF6QtDO5a+CsfwQCcL9PojKWnCd040JRWlE=
 github.com/stafiprotocol/go-substrate-rpc-client v1.0.9/go.mod h1:P3xucNyw6UjKvCvGg0eiQJhcRyZsUv5a9akxDTLMHFk=
 github.com/stafiprotocol/go-substrate-rpc-client v1.1.3 h1:wtRc1AKjdgvAuy6Uxl/yXxd4bhoEfZonpttligceYyY=
 github.com/stafiprotocol/go-substrate-rpc-client v1.1.3/go.mod h1:P3xucNyw6UjKvCvGg0eiQJhcRyZsUv5a9akxDTLMHFk=
 github.com/stafiprotocol/solana-go-sdk v1.0.0/go.mod h1:l17jYuPW1VS1hL5qjlayYsMTrla9wEJHLyGtzFGhmHE=
-github.com/stafiprotocol/stafihub v0.0.0-20220128142239-2403db65977a h1:abTDJzGvH6QGzeKq+5/DGFdjXqfJvore+YojrOV2ttA=
-github.com/stafiprotocol/stafihub v0.0.0-20220128142239-2403db65977a/go.mod h1:09q1X1vTnjBrgt4ELNhKf6dZHuX7PLVn/sMauEgswEQ=
-github.com/stafiprotocol/stafihub v0.0.0-20220207073311-2f4837ede803 h1:NZI5Dksu38U2t0nxqENvIKjiK/T5fWt8mfFDjvfw/Ok=
-github.com/stafiprotocol/stafihub v0.0.0-20220207073311-2f4837ede803/go.mod h1:09q1X1vTnjBrgt4ELNhKf6dZHuX7PLVn/sMauEgswEQ=
-github.com/stafiprotocol/stafihub v0.0.0-20220208022429-af77c2d8575b h1:OoEmTUCPTDuZTMXSV6zoZ2ku1v5dwJ+VlW/vBMLT620=
-github.com/stafiprotocol/stafihub v0.0.0-20220208022429-af77c2d8575b/go.mod h1:09q1X1vTnjBrgt4ELNhKf6dZHuX7PLVn/sMauEgswEQ=
 github.com/status-im/keycard-go v0.0.0-20190316090335-8537d3370df4/go.mod h1:RZLeN1LMWmRsyYjvAu+I6Dm9QmlDaIIt+Y+4Kd7Tp+Q=
 github.com/steakknife/bloomfilter v0.0.0-20180922174646-6819c0d2a570/go.mod h1:8OR4w3TdeIHIh1g6EMY5p0gVNOovcWC+1vpc7naMuAw=
 github.com/steakknife/hamming v0.0.0-20180906055917-c99c65617cd3/go.mod h1:hpGUWaI9xL8pRQCTXQgocU38Qw1g0Us7n5PxxTwTCYU=
@@ -1140,6 +1137,7 @@ github.com/tendermint/crypto v0.0.0-20191022145703-50d29ede1e15 h1:hqAk8riJvK4RM
 github.com/tendermint/crypto v0.0.0-20191022145703-50d29ede1e15/go.mod h1:z4YtwM70uOnk8h0pjJYlj3zdYwi9l03By6iAIF5j/Pk=
 github.com/tendermint/go-amino v0.16.0 h1:GyhmgQKvqF82e2oZeuMSp9JTN0N09emoSZlb2lyGa2E=
 github.com/tendermint/go-amino v0.16.0/go.mod h1:TQU0M1i/ImAo+tYpZi73AU3V/dKeCoMC9Sphe2ZwGME=
+github.com/tendermint/spm v0.1.8 h1:ya0o4Um6Hht2LC1X/y0+9Rz0Q8DyUhRIIXR9vgDUTGA=
 github.com/tendermint/spm v0.1.8/go.mod h1:iHgfQ5YOI6ONc9E7ugGQolVdfSMHpeXfZ/OpXuN/42Q=
 github.com/tendermint/tendermint v0.34.0-rc4/go.mod h1:yotsojf2C1QBOw4dZrTcxbyxmPUrT4hNuOQWX9XUwB4=
 github.com/tendermint/tendermint v0.34.0-rc6/go.mod h1:ugzyZO5foutZImv0Iyx/gOFCX6mjJTgbLHTwi17VDVg=

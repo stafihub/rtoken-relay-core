@@ -2,7 +2,7 @@ package core
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	stafiHubXLedgerTypes "github.com/stafiprotocol/stafihub/x/ledger/types"
+	stafiHubXLedgerTypes "github.com/stafihub/stafihub/x/ledger/types"
 )
 
 type Message struct {
