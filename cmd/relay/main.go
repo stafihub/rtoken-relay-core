@@ -7,10 +7,10 @@ import (
 	"strconv"
 
 	log "github.com/ChainSafe/log15"
-	cosmosChain "github.com/stafiprotocol/cosmos-relay-sdk/chain"
-	"github.com/stafiprotocol/rtoken-relay-core/common/config"
-	"github.com/stafiprotocol/rtoken-relay-core/common/core"
-	stafiHubChain "github.com/stafiprotocol/stafi-hub-relay-sdk/chain"
+	cosmosChain "github.com/stafihub/cosmos-relay-sdk/chain"
+	"github.com/stafihub/rtoken-relay-core/common/config"
+	"github.com/stafihub/rtoken-relay-core/common/core"
+	stafiHubChain "github.com/stafihub/stafi-hub-relay-sdk/chain"
 	"github.com/urfave/cli/v2"
 )
 
