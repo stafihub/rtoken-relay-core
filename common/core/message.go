@@ -92,7 +92,7 @@ type EventSignatureEnough struct {
 	Era        uint32
 	Pool       string
 	TxType     stafiHubXLedgerTypes.OriginalTxType
-	ProposalId []byte
+	ProposalId string
 	Signatures [][]byte
 	Threshold  uint32
 }
@@ -114,25 +114,25 @@ type ProposalSetChainEra struct {
 
 type ProposalBondReport struct {
 	Denom  string
-	ShotId []byte
+	ShotId string
 	Action stafiHubXLedgerTypes.BondAction
 }
 
 type ProposalActiveReport struct {
 	Denom    string
-	ShotId   []byte
+	ShotId   string
 	Staked   sdk.Int
 	Unstaked sdk.Int
 }
 
 type ProposalWithdrawReport struct {
 	Denom  string
-	ShotId []byte
+	ShotId string
 }
 
 type ProposalTransferReport struct {
 	Denom  string
-	ShotId []byte
+	ShotId string
 }
 
 type ParamSubmitSignature struct {
@@ -140,7 +140,7 @@ type ParamSubmitSignature struct {
 	Era       uint32
 	Pool      string
 	TxType    stafiHubXLedgerTypes.OriginalTxType
-	PropId    []byte
+	PropId    string
 	Signature string
 }
 
