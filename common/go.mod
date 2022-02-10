@@ -1,4 +1,4 @@
-module github.com/stafiprotocol/rtoken-relay-core/common
+module github.com/stafihub/rtoken-relay-core/common
 
 go 1.17
 

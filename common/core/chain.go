@@ -5,7 +5,7 @@ package core
 
 import (
 	"github.com/ChainSafe/log15"
-	"github.com/stafiprotocol/rtoken-relay-core/common/config"
+	"github.com/stafihub/rtoken-relay-core/common/config"
 )
 
 type Chain interface {
