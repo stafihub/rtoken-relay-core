@@ -4,9 +4,9 @@ go 1.17
 
 require (
 	github.com/ChainSafe/log15 v1.0.0
-	github.com/cosmos/cosmos-sdk v0.44.5
+	github.com/cosmos/cosmos-sdk v0.45.1
 	github.com/ethereum/go-ethereum v1.10.15
-	github.com/stafihub/stafihub v0.0.0-20220209165340-5b4ac219fb84
+	github.com/stafihub/stafihub v0.0.0-20220212155752-b41e78dd51e3
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3
 	github.com/urfave/cli/v2 v2.3.0

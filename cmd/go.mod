@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/ChainSafe/log15 v1.0.0
-	github.com/cosmos/cosmos-sdk v0.45.0
+	github.com/cosmos/cosmos-sdk v0.45.1
 	github.com/cosmos/ibc-go v1.2.5
 	github.com/spf13/cobra v1.2.1
 	github.com/stafihub/cosmos-relay-sdk v0.0.0-20220210023620-7d1f3edc4cf3
@@ -107,7 +107,7 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.8.1 // indirect
-	github.com/stafihub/stafihub v0.0.0-20220209165340-5b4ac219fb84 // indirect
+	github.com/stafihub/stafihub v0.0.0-20220212155752-b41e78dd51e3 // indirect
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3 // indirect
 	github.com/stafiprotocol/tendermint v0.4.0 // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
