@@ -45,7 +45,8 @@ const (
 	ReasonValidatorUpdatedEvent = Reason("ValidatorUpdatedEvent")
 
 	//get reason
-	ReasonGetPools = Reason("GetPools")
+	ReasonGetPools      = Reason("GetPools")
+	ReasonGetSignatures = Reason("GetSignatures")
 )
 
 // === stafihub -> other chain msg data used in cosmos
@@ -99,12 +100,11 @@ type EventSignatureEnough struct {
 
 // === other chain -> stafihub msg data used in cosmos
 type ProposalExeLiquidityBond struct {
-	Denom     string
-	Bonder    string
-	Pool      string
-	Blockhash string
-	Txhash    string
-	Amount    sdk.Int
+	Denom  string
+	Bonder string
+	Pool   string
+	Txhash string
+	Amount sdk.Int
 }
 
 type ProposalSetChainEra struct {
@@ -148,4 +148,13 @@ type ParamSubmitSignature struct {
 type ParamGetPools struct {
 	Denom string
 	Pools chan []string
+}
+
+type ParamGetSignatures struct {
+	Denom  string
+	Era    uint32
+	Pool   string
+	TxType stafiHubXLedgerTypes.OriginalTxType
+	PropId string
+	Sigs   chan []string
 }
