@@ -3,7 +3,7 @@
     {
       "name": "stafi-hub chain",
       "type": "stafiHub",
-      "endpoint": "http://127.0.0.1:16657",
+      "endpoint": "http://127.0.0.1:26657",
       "rsymbol": "RFIS",
       "keystorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/keys/stafihub",
       "opts": {
@@ -18,7 +18,7 @@
     {
       "name": "cosmos-hub chain",
       "type": "cosmosHub",
-      "endpoint": "http://127.0.0.1:26657",
+      "endpoint": "http://127.0.0.1:16657",
       "rsymbol": "uratom",
       "keystorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/keys/cosmoshub",
       "opts": {

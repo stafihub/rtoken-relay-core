@@ -155,7 +155,7 @@ func run(ctx *cli.Context) error {
 	var newChain core.Chain
 	switch chainConfig.Type {
 	case config.ChainTypeCosmosHub:
-		// prepare initial params
+		// prepare r params
 		rParams, err := stafiHubChain.GetRParams(chainConfig.Rsymbol)
 		if err != nil {
 			return err
@@ -177,10 +177,12 @@ func run(ctx *cli.Context) error {
 			return fmt.Errorf("no pool and subkey")
 		}
 
+		// prepare pools and threshold
 		poolRes, err := stafiHubChain.GetPools(rParams.RParams.Denom)
 		if err != nil {
 			return err
 		}
+		option.PoolAddressThreshold = make(map[string]uint32)
 		for _, poolAddress := range poolRes.GetAddrs() {
 			poolDetail, err := stafiHubChain.GetPoolDetail(rParams.RParams.Denom, poolAddress)
 			if err != nil {
@@ -189,7 +191,7 @@ func run(ctx *cli.Context) error {
 			if poolDetail.Detail.Threshold <= 0 {
 				return fmt.Errorf("pool threshold is zero in stafihub, pool: %s", poolAddress)
 			}
-			option.PoolAddressThreshold[poolAddress] = int(poolDetail.Detail.Threshold)
+			option.PoolAddressThreshold[poolAddress] = poolDetail.Detail.Threshold
 		}
 
 		option.ChainID = rParams.RParams.ChainId
