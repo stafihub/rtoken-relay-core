@@ -7,9 +7,9 @@ require (
 	github.com/cosmos/cosmos-sdk v0.45.1
 	github.com/cosmos/ibc-go v1.2.5
 	github.com/spf13/cobra v1.2.1
-	github.com/stafihub/cosmos-relay-sdk v0.0.0-20220210023620-7d1f3edc4cf3
+	github.com/stafihub/cosmos-relay-sdk v0.0.0-20220221021955-8119b34cd88d
 	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220219031646-b875374d84f2
-	github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220210024026-1632cfbddfec
+	github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220219145827-6d86b3c3f14d
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-sdk v1.3.1
 	github.com/urfave/cli/v2 v2.3.0
@@ -139,6 +139,4 @@ replace (
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.1.6
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
-	github.com/stafihub/cosmos-relay-sdk => /Users/tpkeeper/gowork/stafi/cosmos-relay-sdk
-	github.com/stafihub/stafi-hub-relay-sdk => /Users/tpkeeper/gowork/stafi/stafi-hub-relay-sdk
 )
