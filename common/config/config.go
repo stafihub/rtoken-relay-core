@@ -36,8 +36,9 @@ var (
 )
 
 type Config struct {
-	NativeChain   RawChainConfig `json:"nativeChain"`
-	ExternalChain RawChainConfig `json:"externalChain"`
+	BlockstorePath string         `json:"blockstorePath"`
+	NativeChain    RawChainConfig `json:"nativeChain"`
+	ExternalChain  RawChainConfig `json:"externalChain"`
 }
 
 // RawChainConfig is parsed directly from the config file and should be using to construct the core.ChainConfig

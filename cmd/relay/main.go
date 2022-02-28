@@ -136,6 +136,8 @@ func run(ctx *cli.Context) error {
 		return err
 	}
 	option.CaredSymbol = cfg.ExternalChain.Rsymbol
+	option.BlockstorePath = cfg.BlockstorePath
+
 	stafiHubChainConfig.Opts = option
 	stafiHubChain := stafiHubChain.NewChain()
 	logger := log.Root().New("chain", stafiHubChainConfig.Name)
@@ -187,12 +189,11 @@ func run(ctx *cli.Context) error {
 		cosmosOption.PoolAddressThreshold[poolAddress] = poolDetail.Detail.Threshold
 	}
 
-	cosmosOption.ChainID = rParams.RParams.ChainId
 	cosmosOption.EraSeconds = eraSeconds
 	cosmosOption.GasPrice = rParams.RParams.GasPrice
 	cosmosOption.TargetValidators = rParams.RParams.Validators
-	cosmosOption.Denom = rParams.RParams.NativeDenom
 	cosmosOption.LeastBond = rParams.RParams.LeastBond.BigInt()
+	cosmosOption.BlockstorePath = cfg.BlockstorePath
 
 	chainConfig.Opts = cosmosOption
 	newChain = cosmosChain.NewChain()
