@@ -123,14 +123,9 @@ func run(ctx *cli.Context) error {
 	// Used to signal core shutdown due to fatal error
 	sysErr := make(chan error)
 	c := core.NewCore(sysErr)
-	if len(cfg.Chains) != 2 {
-		return fmt.Errorf("chains len must equal to 2")
-	}
-	if cfg.Chains[0].Type != config.ChainTypeStafiHub {
-		return fmt.Errorf("first chain must be stafi")
-	}
+
 	// init stafiHub
-	stafiHubChainConfig := cfg.Chains[0]
+	stafiHubChainConfig := cfg.NativeChain
 	bts, err := json.Marshal(stafiHubChainConfig.Opts)
 	if err != nil {
 		return err
@@ -140,7 +135,7 @@ func run(ctx *cli.Context) error {
 	if err != nil {
 		return err
 	}
-	option.CaredSymbol = cfg.Chains[1].Rsymbol
+	option.CaredSymbol = cfg.ExternalChain.Rsymbol
 	stafiHubChainConfig.Opts = option
 	stafiHubChain := stafiHubChain.NewChain()
 	logger := log.Root().New("chain", stafiHubChainConfig.Name)
@@ -150,66 +145,61 @@ func run(ctx *cli.Context) error {
 	}
 	c.AddChain(stafiHubChain)
 
-	// init other chain
-	chainConfig := cfg.Chains[1]
+	// init externa chain
+	chainConfig := cfg.ExternalChain
 	var newChain core.Chain
-	switch chainConfig.Type {
-	case config.ChainTypeCosmosHub:
-		// prepare r params
-		rParams, err := stafiHubChain.GetRParams(chainConfig.Rsymbol)
-		if err != nil {
-			return err
-		}
-		bts, err := json.Marshal(chainConfig.Opts)
-		if err != nil {
-			return err
-		}
-		option := cosmosChain.ConfigOption{}
-		err = json.Unmarshal(bts, &option)
-		if err != nil {
-			return err
-		}
-		eraSeconds, err := strconv.Atoi(rParams.RParams.EraSeconds)
-		if err != nil {
-			return err
-		}
-		if len(option.PoolNameSubKey) == 0 {
-			return fmt.Errorf("no pool and subkey")
-		}
+	// prepare r params
+	rParams, err := stafiHubChain.GetRParams(chainConfig.Rsymbol)
+	if err != nil {
+		return err
+	}
+	bts, err = json.Marshal(chainConfig.Opts)
+	if err != nil {
+		return err
+	}
+	cosmosOption := cosmosChain.ConfigOption{}
+	err = json.Unmarshal(bts, &cosmosOption)
+	if err != nil {
+		return err
+	}
+	eraSeconds, err := strconv.Atoi(rParams.RParams.EraSeconds)
+	if err != nil {
+		return err
+	}
+	if len(cosmosOption.PoolNameSubKey) == 0 {
+		return fmt.Errorf("no pool and subkey")
+	}
 
-		// prepare pools and threshold
-		poolRes, err := stafiHubChain.GetPools(rParams.RParams.Denom)
+	// prepare pools and threshold
+	poolRes, err := stafiHubChain.GetPools(rParams.RParams.Denom)
+	if err != nil {
+		return err
+	}
+	cosmosOption.PoolAddressThreshold = make(map[string]uint32)
+	for _, poolAddress := range poolRes.GetAddrs() {
+		poolDetail, err := stafiHubChain.GetPoolDetail(rParams.RParams.Denom, poolAddress)
 		if err != nil {
 			return err
 		}
-		option.PoolAddressThreshold = make(map[string]uint32)
-		for _, poolAddress := range poolRes.GetAddrs() {
-			poolDetail, err := stafiHubChain.GetPoolDetail(rParams.RParams.Denom, poolAddress)
-			if err != nil {
-				return err
-			}
-			if poolDetail.Detail.Threshold <= 0 {
-				return fmt.Errorf("pool threshold is zero in stafihub, pool: %s", poolAddress)
-			}
-			option.PoolAddressThreshold[poolAddress] = poolDetail.Detail.Threshold
+		if poolDetail.Detail.Threshold <= 0 {
+			return fmt.Errorf("pool threshold is zero in stafihub, pool: %s", poolAddress)
 		}
+		cosmosOption.PoolAddressThreshold[poolAddress] = poolDetail.Detail.Threshold
+	}
 
-		option.ChainID = rParams.RParams.ChainId
-		option.EraSeconds = eraSeconds
-		option.GasPrice = rParams.RParams.GasPrice
-		option.TargetValidators = rParams.RParams.Validators
-		option.Denom = rParams.RParams.NativeDenom
-		option.LeastBond = rParams.RParams.LeastBond.BigInt()
+	cosmosOption.ChainID = rParams.RParams.ChainId
+	cosmosOption.EraSeconds = eraSeconds
+	cosmosOption.GasPrice = rParams.RParams.GasPrice
+	cosmosOption.TargetValidators = rParams.RParams.Validators
+	cosmosOption.Denom = rParams.RParams.NativeDenom
+	cosmosOption.LeastBond = rParams.RParams.LeastBond.BigInt()
 
-		chainConfig.Opts = option
-		newChain = cosmosChain.NewChain()
-		logger := log.Root().New("chain", chainConfig.Name)
-		err = newChain.Initialize(&chainConfig, logger, sysErr)
-		if err != nil {
-			return fmt.Errorf("newChain.Initialize failed: %s", err)
-		}
-	default:
-		return fmt.Errorf("unsupport Chain Type: %s", chainConfig.Type)
+	chainConfig.Opts = cosmosOption
+	newChain = cosmosChain.NewChain()
+	externalChainLogger := log.Root().New("chain", chainConfig.Name)
+	err = newChain.Initialize(&chainConfig, externalChainLogger, sysErr)
+	if err != nil {
+		return fmt.Errorf("newChain.Initialize failed: %s", err)
 	}
 	c.AddChain(newChain)
 	c.Start()

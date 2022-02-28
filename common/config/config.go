@@ -13,8 +13,10 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-const defaultConfigPath = "./config.json"
-const defaultKeystorePath = "./keys"
+const (
+	defaultConfigPath   = "./config.json"
+	defaultKeystorePath = "./keys"
+)
 
 var (
 	ChainTypeStafiHub  = "stafiHub"
@@ -34,23 +36,17 @@ var (
 )
 
 type Config struct {
-	Chains []RawChainConfig `json:"chains"`
+	NativeChain   RawChainConfig `json:"nativeChain"`
+	ExternalChain RawChainConfig `json:"externalChain"`
 }
 
 // RawChainConfig is parsed directly from the config file and should be using to construct the core.ChainConfig
 type RawChainConfig struct {
 	Name         string      `json:"name"`
-	Type         string      `json:"type"`
 	Rsymbol      string      `json:"rsymbol"`
 	Endpoint     string      `json:"endpoint"` // url for rpc endpoint
 	KeystorePath string      `json:"keystorePath"`
 	Opts         interface{} `json:"opts"`
-}
-
-func NewConfig() *Config {
-	return &Config{
-		Chains: []RawChainConfig{},
-	}
 }
 
 func GetConfig(ctx *cli.Context) (*Config, error) {
