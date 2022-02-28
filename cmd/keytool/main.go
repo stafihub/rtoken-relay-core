@@ -8,12 +8,10 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/keys"
 	"github.com/cosmos/cosmos-sdk/server"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
-	xAuthTypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/spf13/cobra"
 )
 
-const StafiHubDefaultHomeDir = "./keys/stafihub"
-const CosmosHubDefaultHomeDir = "./keys/cosmoshub"
+var defaultNodeHome = "./keys/cosmos"
 
 func main() {
 	encodingConfig := MakeEncodingConfig()
@@ -22,21 +20,18 @@ func main() {
 		WithInterfaceRegistry(encodingConfig.InterfaceRegistry).
 		WithTxConfig(encodingConfig.TxConfig).
 		WithLegacyAmino(encodingConfig.Amino).
-		WithInput(os.Stdin).
-		WithAccountRetriever(xAuthTypes.AccountRetriever{}).
-		WithBroadcastMode(flags.BroadcastBlock)
+		WithInput(os.Stdin)
 
 	rootCmd := &cobra.Command{
 		Use:   "keytool",
 		Short: "tool to manage keys",
-	}
-	genStafiCmd := &cobra.Command{
-		Use:   "genstafi",
-		Short: "tool to manage stafi-hub keys",
-		Long:  "Notice: The keyring supports os|file|test backends, but relay now only support the file backend",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
-			initClientCtx = initClientCtx.WithHomeDir(StafiHubDefaultHomeDir).WithKeyringOptions()
-			SetPrefixes("fis")
+			prefix, err := cmd.Flags().GetString("prefix")
+			if err != nil {
+				return err
+			}
+
+			SetPrefixes(prefix)
 			if err := client.SetCmdClientContextHandler(initClientCtx, cmd); err != nil {
 				return err
 			}
@@ -44,26 +39,23 @@ func main() {
 			return server.InterceptConfigsPreRunHandler(cmd, "", nil)
 		},
 	}
-	genStafiCmd.AddCommand(keys.Commands(StafiHubDefaultHomeDir))
 
-	genCosmosCmd := &cobra.Command{
-		Use:   "gencosmos",
-		Short: "tool to manage cosmos-hub keys",
-		Long:  "Notice: The keyring supports os|file|test backends, but relay now only support the file backend",
-		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
-			initClientCtx = initClientCtx.WithHomeDir(CosmosHubDefaultHomeDir).WithKeyringOptions()
-			SetPrefixes("cosmos")
-			if err := client.SetCmdClientContextHandler(initClientCtx, cmd); err != nil {
-				return err
-			}
+	rootCmd.AddCommand(
+		keys.MnemonicKeyCommand(),
+		keys.AddKeyCommand(),
+		keys.ExportKeyCommand(),
+		keys.ImportKeyCommand(),
+		keys.ListKeysCmd(),
+		keys.ShowKeysCmd(),
+		keys.DeleteKeyCommand(),
+		keys.ParseKeyStringCommand(),
+		keys.MigrateCommand(),
+	)
 
-			return server.InterceptConfigsPreRunHandler(cmd, "", nil)
-		},
-	}
-	genCosmosCmd.AddCommand(keys.Commands(CosmosHubDefaultHomeDir))
+	rootCmd.PersistentFlags().String("prefix", "cosmos", "The chain prefix")
+	rootCmd.PersistentFlags().String(flags.FlagKeyringDir, "", "The client Keyring directory; if omitted, the default 'home' directory will be used")
+	rootCmd.PersistentFlags().String(flags.FlagKeyringBackend, "file", "Select keyring's backend (os|file|test)")
+	rootCmd.PersistentFlags().String("output", "text", "Output format (text|json)")
 
-	rootCmd.AddCommand(genStafiCmd)
-	rootCmd.AddCommand(genCosmosCmd)
-
-	svrcmd.Execute(rootCmd, "")
+	svrcmd.Execute(rootCmd, defaultNodeHome)
 }
