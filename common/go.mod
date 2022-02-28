@@ -6,7 +6,7 @@ require (
 	github.com/ChainSafe/log15 v1.0.0
 	github.com/cosmos/cosmos-sdk v0.45.1
 	github.com/ethereum/go-ethereum v1.10.15
-	github.com/stafihub/stafihub v0.0.0-20220223081716-52cef48158f2
+	github.com/stafihub/stafihub v0.0.0-20220225074939-d4197f3982ce
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3
 	github.com/urfave/cli/v2 v2.3.0

@@ -10,8 +10,8 @@
         "blockstorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/blockstore",
         "startBlock": 0,
         "chainId": "local-stafihub",
-        "denom": "fis",
-        "gasPrice": "0.00001fis",
+        "denom": "ufis",
+        "gasPrice": "0.00001ufis",
         "account": "relay1"
       }
     },
