@@ -126,6 +126,7 @@ func run(ctx *cli.Context) error {
 
 	// init stafiHub
 	stafiHubChainConfig := cfg.NativeChain
+	stafiHubChainConfig.Rsymbol = string(core.RFIS)
 	bts, err := json.Marshal(stafiHubChainConfig.Opts)
 	if err != nil {
 		return err

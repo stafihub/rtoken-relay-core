@@ -1,33 +1,25 @@
 {
-  "chains": [
-    {
-      "name": "stafi-hub chain",
-      "type": "stafiHub",
-      "endpoint": "http://127.0.0.1:26657",
-      "rsymbol": "RFIS",
-      "keystorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/keys/stafihub",
-      "opts": {
-        "blockstorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/blockstore",
-        "startBlock": 0,
-        "chainId": "local-stafihub",
-        "denom": "ufis",
-        "gasPrice": "0.00001ufis",
-        "account": "relay1"
-      }
-    },
-    {
-      "name": "cosmos-hub chain",
-      "type": "cosmosHub",
-      "endpoint": "http://127.0.0.1:16657",
-      "rsymbol": "uratom",
-      "keystorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/keys/cosmoshub",
-      "opts": {
-        "blockstorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/blockstore",
-        "startBlock": 0,
-        "pools": {
-          "multisig1": "key1"
-        }
+  "blockstorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/blockstore",
+  "nativeChain": {
+    "name": "stafi-hub chain",
+    "endpoint": "http://127.0.0.1:26657",
+    "keystorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/keys/stafihub",
+    "opts": {
+      "startBlock": 0,
+      "gasPrice": "0.00001ufis",
+      "account": "relay1"
+    }
+  },
+  "externalChain": {
+    "name": "cosmos-hub chain",
+    "endpoint": "http://127.0.0.1:16657",
+    "rsymbol": "uratom",
+    "keystorePath": "/Users/tpkeeper/gowork/stafi/rtoken-relay-core/keys/cosmoshub",
+    "opts": {
+      "startBlock": 0,
+      "pools": {
+        "multisig1": "key1"
       }
     }
-  ]
+  }
 }
