@@ -11,7 +11,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var defaultNodeHome = "./keys/cosmos"
+var defaultNodeHome = "./keys/stafihub"
 
 func main() {
 	encodingConfig := MakeEncodingConfig()
@@ -52,7 +52,7 @@ func main() {
 		keys.MigrateCommand(),
 	)
 
-	rootCmd.PersistentFlags().String("prefix", "cosmos", "The chain prefix")
+	rootCmd.PersistentFlags().String("prefix", "stafi", "The chain prefix")
 	rootCmd.PersistentFlags().String(flags.FlagKeyringDir, "", "The client Keyring directory; if omitted, the default 'home' directory will be used")
 	rootCmd.PersistentFlags().String(flags.FlagKeyringBackend, "file", "Select keyring's backend (os|file|test)")
 	rootCmd.PersistentFlags().String("output", "text", "Output format (text|json)")
