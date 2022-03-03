@@ -193,7 +193,7 @@ func run(ctx *cli.Context) error {
 	cosmosOption.EraSeconds = eraSeconds
 	cosmosOption.GasPrice = rParams.RParams.GasPrice
 	cosmosOption.TargetValidators = rParams.RParams.Validators
-	cosmosOption.LeastBond = rParams.RParams.LeastBond.BigInt()
+	cosmosOption.LeastBond = rParams.RParams.LeastBond
 	cosmosOption.BlockstorePath = cfg.BlockstorePath
 
 	chainConfig.Opts = cosmosOption
