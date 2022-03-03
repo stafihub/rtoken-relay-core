@@ -19,7 +19,8 @@
       "startBlock": 0,
       "pools": {
         "multisig1": "key1"
-      }
+      },
+      "accountPrefix": "cosmos"
     }
   }
 }

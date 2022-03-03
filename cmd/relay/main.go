@@ -8,6 +8,7 @@ import (
 
 	log "github.com/ChainSafe/log15"
 	cosmosChain "github.com/stafihub/cosmos-relay-sdk/chain"
+	cosmosClient "github.com/stafihub/cosmos-relay-sdk/client"
 	"github.com/stafihub/rtoken-relay-core/common/config"
 	"github.com/stafihub/rtoken-relay-core/common/core"
 	stafiHubChain "github.com/stafihub/stafi-hub-relay-sdk/chain"
@@ -165,6 +166,7 @@ func run(ctx *cli.Context) error {
 	if err != nil {
 		return err
 	}
+	cosmosClient.AccountPrefix = cosmosOption.AccountPrefix
 	eraSeconds, err := strconv.Atoi(rParams.RParams.EraSeconds)
 	if err != nil {
 		return err
