@@ -125,7 +125,7 @@ func run(ctx *cli.Context) error {
 	sysErr := make(chan error)
 	c := core.NewCore(sysErr)
 
-	// init stafiHub
+	// ======================== init stafiHub
 	stafiHubChainConfig := cfg.NativeChain
 	stafiHubChainConfig.Rsymbol = string(core.RFIS)
 	bts, err := json.Marshal(stafiHubChainConfig.Opts)
@@ -149,14 +149,11 @@ func run(ctx *cli.Context) error {
 	}
 	c.AddChain(stafiHubChain)
 
-	// init externa chain
+	//========================== init external chain
 	chainConfig := cfg.ExternalChain
 	var newChain core.Chain
-	// prepare r params
-	rParams, err := stafiHubChain.GetRParams(chainConfig.Rsymbol)
-	if err != nil {
-		return err
-	}
+
+	// load option config from file
 	bts, err = json.Marshal(chainConfig.Opts)
 	if err != nil {
 		return err
@@ -167,12 +164,16 @@ func run(ctx *cli.Context) error {
 		return err
 	}
 	cosmosClient.AccountPrefix = cosmosOption.AccountPrefix
-
+	cosmosOption.BlockstorePath = cfg.BlockstorePath
 	if len(cosmosOption.PoolNameSubKey) == 0 {
 		return fmt.Errorf("no pool and subkey")
 	}
 
-	// prepare pools and threshold
+	// prepare r params from stafihub
+	rParams, err := stafiHubChain.GetRParams(chainConfig.Rsymbol)
+	if err != nil {
+		return err
+	}
 	poolRes, err := stafiHubChain.GetPools(rParams.RParams.Denom)
 	if err != nil {
 		return err
@@ -193,7 +194,7 @@ func run(ctx *cli.Context) error {
 	cosmosOption.GasPrice = rParams.RParams.GasPrice
 	cosmosOption.TargetValidators = rParams.RParams.Validators
 	cosmosOption.LeastBond = rParams.RParams.LeastBond
-	cosmosOption.BlockstorePath = cfg.BlockstorePath
+	cosmosOption.Offset = rParams.RParams.Offset
 
 	chainConfig.Opts = cosmosOption
 	newChain = cosmosChain.NewChain()
@@ -203,6 +204,8 @@ func run(ctx *cli.Context) error {
 		return fmt.Errorf("newChain.Initialize failed: %s", err)
 	}
 	c.AddChain(newChain)
+
+	// =============== start
 	c.Start()
 	return nil
 }
