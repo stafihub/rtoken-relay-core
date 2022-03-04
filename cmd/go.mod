@@ -107,7 +107,7 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.8.1 // indirect
-	github.com/stafihub/stafihub v0.0.0-20220303022941-965eec2293e5 // indirect
+	github.com/stafihub/stafihub v0.0.0-20220304051053-bb7406e86fbe // indirect
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3 // indirect
 	github.com/stafiprotocol/tendermint v0.4.0 // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
@@ -139,4 +139,6 @@ replace (
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.1.6
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
+	github.com/stafihub/cosmos-relay-sdk => /Users/tpkeeper/gowork/stafi/cosmos-relay-sdk
+	github.com/stafihub/stafi-hub-relay-sdk => /Users/tpkeeper/gowork/stafi/stafi-hub-relay-sdk
 )

@@ -41,8 +41,8 @@ const (
 	ReasonTransferReportedEvent  = Reason("TransferReportedEvent")
 	ReasonNominationUpdatedEvent = Reason("NominationUpdatedEvent")
 	ReasonSignatureEnoughEvent   = Reason("SignatureEnoughed")
-
-	ReasonValidatorUpdatedEvent = Reason("ValidatorUpdatedEvent")
+	ReasonValidatorUpdatedEvent  = Reason("ValidatorUpdatedEvent")
+	ReasonRParamsChangedEvent    = Reason("RParamsChangedEvent")
 
 	//get reason
 	ReasonGetPools      = Reason("GetPools")
@@ -96,6 +96,15 @@ type EventSignatureEnough struct {
 	ProposalId string
 	Signatures [][]byte
 	Threshold  uint32
+}
+
+type EventRParamsChanged struct {
+	Denom            string
+	GasPrice         string   `json:"gasPrice"`
+	EraSeconds       string   `json:"eraSeconds"`
+	LeastBond        string   `json:"leastBond"`
+	Offset           string   `json:"offset"`
+	TargetValidators []string `json:"targetValidators"`
 }
 
 // === other chain -> stafihub msg data used in cosmos

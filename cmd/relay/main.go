@@ -167,10 +167,7 @@ func run(ctx *cli.Context) error {
 		return err
 	}
 	cosmosClient.AccountPrefix = cosmosOption.AccountPrefix
-	eraSeconds, err := strconv.Atoi(rParams.RParams.EraSeconds)
-	if err != nil {
-		return err
-	}
+
 	if len(cosmosOption.PoolNameSubKey) == 0 {
 		return fmt.Errorf("no pool and subkey")
 	}
@@ -192,7 +189,7 @@ func run(ctx *cli.Context) error {
 		cosmosOption.PoolAddressThreshold[poolAddress] = poolDetail.Detail.Threshold
 	}
 
-	cosmosOption.EraSeconds = eraSeconds
+	cosmosOption.EraSeconds = rParams.RParams.EraSeconds
 	cosmosOption.GasPrice = rParams.RParams.GasPrice
 	cosmosOption.TargetValidators = rParams.RParams.Validators
 	cosmosOption.LeastBond = rParams.RParams.LeastBond
