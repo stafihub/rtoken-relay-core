@@ -163,7 +163,7 @@ func run(ctx *cli.Context) error {
 	if err != nil {
 		return err
 	}
-	cosmosClient.AccountPrefix = cosmosOption.AccountPrefix
+	
 	cosmosOption.BlockstorePath = cfg.BlockstorePath
 	if len(cosmosOption.PoolNameSubKey) == 0 {
 		return fmt.Errorf("no pool and subkey")
@@ -195,6 +195,13 @@ func run(ctx *cli.Context) error {
 	cosmosOption.TargetValidators = rParams.RParams.Validators
 	cosmosOption.LeastBond = rParams.RParams.LeastBond
 	cosmosOption.Offset = rParams.RParams.Offset
+	// prepare account prefix from stafihub
+	prefixRes, err := stafiHubChain.GetAddressPrefix(chainConfig.Rsymbol)
+	if err != nil {
+		return err
+	}
+	cosmosOption.AccountPrefix = prefixRes.GetAddressPrefix()
+	cosmosClient.AccountPrefix = cosmosOption.AccountPrefix
 
 	chainConfig.Opts = cosmosOption
 	newChain = cosmosChain.NewChain()
