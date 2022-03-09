@@ -7,9 +7,9 @@ require (
 	github.com/cosmos/cosmos-sdk v0.45.1
 	github.com/cosmos/ibc-go v1.2.5
 	github.com/spf13/cobra v1.2.1
-	github.com/stafihub/cosmos-relay-sdk v0.0.0-20220305093907-838bbf8597cc
-	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220304071726-3493a910c902
-	github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220308122305-63d26c350e64
+	github.com/stafihub/cosmos-relay-sdk v0.0.0-20220309092054-9c8304f86603
+	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220309091800-e1cba7aee072
+	github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220309092107-b29db962181e
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-sdk v1.3.1
 	github.com/urfave/cli/v2 v2.3.0
