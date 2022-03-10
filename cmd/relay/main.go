@@ -163,7 +163,7 @@ func run(ctx *cli.Context) error {
 	if err != nil {
 		return err
 	}
-	
+
 	cosmosOption.BlockstorePath = cfg.BlockstorePath
 	if len(cosmosOption.PoolNameSubKey) == 0 {
 		return fmt.Errorf("no pool and subkey")
@@ -200,8 +200,7 @@ func run(ctx *cli.Context) error {
 	if err != nil {
 		return err
 	}
-	cosmosOption.AccountPrefix = prefixRes.GetAddressPrefix()
-	cosmosClient.AccountPrefix = cosmosOption.AccountPrefix
+	cosmosClient.SetAccountPrefix(prefixRes.GetAddressPrefix())
 
 	chainConfig.Opts = cosmosOption
 	newChain = cosmosChain.NewChain()
