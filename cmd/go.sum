@@ -951,8 +951,8 @@ github.com/spf13/viper v1.7.0/go.mod h1:8WkrPz2fc9jxqZNCJI/76HCieCp4Q8HaLFoCha5q
 github.com/spf13/viper v1.7.1/go.mod h1:8WkrPz2fc9jxqZNCJI/76HCieCp4Q8HaLFoCha5qpdg=
 github.com/spf13/viper v1.8.1 h1:Kq1fyeebqsBfbjZj4EL7gj2IO0mMaiyjYUWcUsl2O44=
 github.com/spf13/viper v1.8.1/go.mod h1:o0Pch8wJ9BVSWGQMbra6iw0oQ5oktSIBaujf1rJH9Ns=
-github.com/stafihub/cosmos-relay-sdk v0.0.0-20220321122026-c3644ac9788e h1:nFdzTDfeDi6OAyVLduJRAwUggOOvxyMLRGQGun0UqSY=
-github.com/stafihub/cosmos-relay-sdk v0.0.0-20220321122026-c3644ac9788e/go.mod h1:pQQSLIq5EajrU8dHBUf+k+qH/0dJTb6QjasWR1Gv5S8=
+github.com/stafihub/cosmos-relay-sdk v0.0.0-20220322054749-fa5508597706 h1:1noBaeeuSqi+9c7/cnZmzvwbVQA+WwmB4IvLG864cY4=
+github.com/stafihub/cosmos-relay-sdk v0.0.0-20220322054749-fa5508597706/go.mod h1:pQQSLIq5EajrU8dHBUf+k+qH/0dJTb6QjasWR1Gv5S8=
 github.com/stafihub/cosmos-sdk v0.45.1-stafihub-0.0.3 h1:KwNvRRm5oW5Uk8wqlCItIGqYy1EtAPTJkVJThLvJZOo=
 github.com/stafihub/cosmos-sdk v0.45.1-stafihub-0.0.3/go.mod h1:XXS/asyCqWNWkx2rW6pSuen+EVcpAFxq6khrhnZgHaQ=
 github.com/stafihub/rtoken-relay-core/common v0.0.0-20220309091800-e1cba7aee072 h1:9ZZsCKFkkR9VE52IHoWOf5gVk3oOQdpcpEPY58De6Hc=
