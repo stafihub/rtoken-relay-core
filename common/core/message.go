@@ -114,6 +114,7 @@ type ProposalExeLiquidityBond struct {
 	Pool   string
 	Txhash string
 	Amount sdk.Int
+	State  stafiHubXLedgerTypes.LiquidityBondState
 }
 
 type ProposalSetChainEra struct {
