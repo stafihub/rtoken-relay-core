@@ -239,8 +239,6 @@ github.com/cosmos/go-bip39 v1.0.0 h1:pcomnQdrdH22njcAatO0yWojsUnCO3y2tNoV1cb6hHY
 github.com/cosmos/go-bip39 v1.0.0/go.mod h1:RNJv0H/pOIVgxw6KS7QeX2a0Uo0aKUlfhZ4xuwvCdJw=
 github.com/cosmos/iavl v0.17.3 h1:s2N819a2olOmiauVa0WAhoIJq9EhSXE9HDBAoR9k+8Y=
 github.com/cosmos/iavl v0.17.3/go.mod h1:prJoErZFABYZGDHka1R6Oay4z9PrNeFFiMKHDAMOi4w=
-github.com/cosmos/ibc-go v1.2.5 h1:BiA48yKEDUcabBRkmp7qqSX41ZrgXTSNCtdjDURbLwE=
-github.com/cosmos/ibc-go v1.2.5/go.mod h1:wkGkkX8Ou6yXgE8lO2xP9NOwo+Tl5x1dJaTTE6jBDpg=
 github.com/cosmos/ibc-go/v3 v3.0.0 h1:XUNplHVS51Q2gMnTFsFsH9QJ7flsovMamnltKbEgPQ4=
 github.com/cosmos/ibc-go/v3 v3.0.0/go.mod h1:Mb+1NXiPOLd+CPFlOC6BKeAUaxXlhuWenMmRiUiSmwY=
 github.com/cosmos/keyring v1.1.6 h1:AXKMQB29ribVBqoJL9TRgWEa7zzawB8xl3wKNZmXrdo=
@@ -751,7 +749,6 @@ github.com/mitchellh/mapstructure v0.0.0-20160808181253-ca63d7c062ee/go.mod h1:F
 github.com/mitchellh/mapstructure v1.1.2/go.mod h1:FVVH3fgwuzCH5S8UJGiWEs2h04kUh9fWfEaFds41c1Y=
 github.com/mitchellh/mapstructure v1.3.3/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
 github.com/mitchellh/mapstructure v1.4.1/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
-github.com/mitchellh/mapstructure v1.4.2/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
 github.com/mitchellh/mapstructure v1.4.3 h1:OVowDSCllw/YjdLkam3/sm7wEtOy59d8ndGgCcyj8cs=
 github.com/mitchellh/mapstructure v1.4.3/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
 github.com/mitchellh/pointerstructure v1.2.0/go.mod h1:BRAsLI5zgXmw97Lf6s25bs8ohIXc3tViBH44KcwB2g4=
@@ -995,14 +992,14 @@ github.com/spf13/viper v1.8.1/go.mod h1:o0Pch8wJ9BVSWGQMbra6iw0oQ5oktSIBaujf1rJH
 github.com/spf13/viper v1.10.0/go.mod h1:SoyBPwAtKDzypXNDFKN5kzH7ppppbGZtls1UpIy5AsM=
 github.com/spf13/viper v1.10.1 h1:nuJZuYpG7gTj/XqiUwg8bA0cp1+M2mC3J4g5luUYBKk=
 github.com/spf13/viper v1.10.1/go.mod h1:IGlFPqhNAPKRxohIzWpI5QEy4kuI7tcl5WvR+8qy1rU=
-github.com/stafihub/cosmos-relay-sdk v0.0.0-20220322054749-fa5508597706 h1:1noBaeeuSqi+9c7/cnZmzvwbVQA+WwmB4IvLG864cY4=
-github.com/stafihub/cosmos-relay-sdk v0.0.0-20220322054749-fa5508597706/go.mod h1:pQQSLIq5EajrU8dHBUf+k+qH/0dJTb6QjasWR1Gv5S8=
+github.com/stafihub/cosmos-relay-sdk v0.0.0-20220322135009-e4492294004e h1:iIJO1UI5HIxzU3ByUgwKdQs94M13muCg4EbuPMVJ2ew=
+github.com/stafihub/cosmos-relay-sdk v0.0.0-20220322135009-e4492294004e/go.mod h1:WayJ2QI8XRpMuvR6wR42HsYPkKtyh1DiFRPN1zGhCxo=
 github.com/stafihub/cosmos-sdk v0.45.1-stafihub-0.0.3 h1:KwNvRRm5oW5Uk8wqlCItIGqYy1EtAPTJkVJThLvJZOo=
 github.com/stafihub/cosmos-sdk v0.45.1-stafihub-0.0.3/go.mod h1:XXS/asyCqWNWkx2rW6pSuen+EVcpAFxq6khrhnZgHaQ=
-github.com/stafihub/rtoken-relay-core/common v0.0.0-20220309091800-e1cba7aee072 h1:9ZZsCKFkkR9VE52IHoWOf5gVk3oOQdpcpEPY58De6Hc=
-github.com/stafihub/rtoken-relay-core/common v0.0.0-20220309091800-e1cba7aee072/go.mod h1:SnpkOME4nRY4vGi+UYACBGf33f6lmn40AIoOVKtqlII=
-github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220318142003-2e51feac77da h1:/AYs9geiXX+gvqmG1TzRetP8VLUKlVAMtqVCSual45w=
-github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220318142003-2e51feac77da/go.mod h1:RL++J3qso3D/9oiHj77X0ZNgeGbBgaF50okQ2SlG3jE=
+github.com/stafihub/rtoken-relay-core/common v0.0.0-20220322131640-349d7a0561fd h1:p+pH8uNa9z3iiZLcWN4zGxJ65lZXGWbE2mSgd3nAWa4=
+github.com/stafihub/rtoken-relay-core/common v0.0.0-20220322131640-349d7a0561fd/go.mod h1:qS2egz/kfv/6cs2xz6avrBdfaFmtz32hcJBlKWOSLV0=
+github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220322135403-ac0d720e6fad h1:NzhT2fVmzaKjkylSxLlkUaUmnv+vEnNA+1aaEKylQFY=
+github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220322135403-ac0d720e6fad/go.mod h1:oZSC9LaO/pcfStt5yh9Dgpjy6eRT6cK4L0/ujtZ7sts=
 github.com/stafihub/stafihub v0.0.0-20220322130142-64175d4412cd h1:JuZGkuYt13TtYwwIeYnoPVnsFcFP/S3URGCTXYM8hKc=
 github.com/stafihub/stafihub v0.0.0-20220322130142-64175d4412cd/go.mod h1:vBctZvC1wdki7TGoOkUvbModkh8QRkKYrZ7Xx4xzh44=
 github.com/stafiprotocol/chainbridge v1.0.0 h1:CT5ActFpHt4WEw+VvcCNw/bTLVrrnxK348ro5r0GMds=
@@ -1681,7 +1678,6 @@ gopkg.in/fsnotify.v1 v1.4.7/go.mod h1:Tz8NjZHkW78fSQdbUxIjBTcgA1z1m8ZHf0WmKUhAMy
 gopkg.in/gcfg.v1 v1.2.3/go.mod h1:yesOnuUOFQAhST5vPY4nbZsb/huCgGGXlipJsBn0b3o=
 gopkg.in/ini.v1 v1.51.0/go.mod h1:pNLf8WUiyNEtQjuu5G5vTm06TEv9tsIgeAvK8hOrP4k=
 gopkg.in/ini.v1 v1.62.0/go.mod h1:pNLf8WUiyNEtQjuu5G5vTm06TEv9tsIgeAvK8hOrP4k=
-gopkg.in/ini.v1 v1.63.2/go.mod h1:pNLf8WUiyNEtQjuu5G5vTm06TEv9tsIgeAvK8hOrP4k=
 gopkg.in/ini.v1 v1.66.2 h1:XfR1dOYubytKy4Shzc2LHrrGhU0lDCfDGG1yLPmpgsI=
 gopkg.in/ini.v1 v1.66.2/go.mod h1:pNLf8WUiyNEtQjuu5G5vTm06TEv9tsIgeAvK8hOrP4k=
 gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce/go.mod h1:5AcXVHNjg+BDxry382+8OKon8SEWiKktQR07RKPsv1c=

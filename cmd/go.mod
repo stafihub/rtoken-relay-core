@@ -7,9 +7,9 @@ require (
 	github.com/cosmos/cosmos-sdk v0.45.1
 	github.com/cosmos/ibc-go/v3 v3.0.0
 	github.com/spf13/cobra v1.3.0
-	github.com/stafihub/cosmos-relay-sdk v0.0.0-20220322054749-fa5508597706
-	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220309091800-e1cba7aee072
-	github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220318142003-2e51feac77da
+	github.com/stafihub/cosmos-relay-sdk v0.0.0-20220322135009-e4492294004e
+	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220322131640-349d7a0561fd
+	github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220322135403-ac0d720e6fad
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-sdk v1.3.1
 	github.com/urfave/cli/v2 v2.3.0
@@ -33,7 +33,6 @@ require (
 	github.com/cosmos/btcutil v1.0.4 // indirect
 	github.com/cosmos/go-bip39 v1.0.0 // indirect
 	github.com/cosmos/iavl v0.17.3 // indirect
-	github.com/cosmos/ibc-go v1.2.5 // indirect
 	github.com/cosmos/ledger-cosmos-go v0.11.1 // indirect
 	github.com/cosmos/ledger-go v0.9.2 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.1 // indirect
