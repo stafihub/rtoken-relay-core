@@ -55,8 +55,8 @@ func (c *Core) Start() {
 	select {
 	case err := <-c.sysErr:
 		c.log.Error("FATAL ERROR. Shutting down.", "err", err)
-	case <-sigc:
-		c.log.Warn("Interrupt received, shutting down now.")
+	case sig := <-sigc:
+		c.log.Warn("Interrupt received, shutting down now. signal: %s", sig.String())
 	}
 
 	c.route.StopMsgHandler()
