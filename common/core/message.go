@@ -51,41 +51,36 @@ const (
 
 // === stafihub -> other chain msg data used in cosmos
 type EventEraPoolUpdated struct {
-	Denom       string
-	LastEra     uint32
-	CurrentEra  uint32
-	ShotId      string
-	LasterVoter string
-	Snapshot    stafiHubXLedgerTypes.BondSnapshot
+	Denom      string
+	LastEra    uint32
+	CurrentEra uint32
+	ShotId     string
+	Snapshot   stafiHubXLedgerTypes.BondSnapshot
 }
 
 type EventBondReported struct {
-	Denom       string
-	ShotId      string
-	LasterVoter string
-	Snapshot    stafiHubXLedgerTypes.BondSnapshot
+	Denom    string
+	ShotId   string
+	Snapshot stafiHubXLedgerTypes.BondSnapshot
 }
 
 type EventActiveReported struct {
-	Denom       string
-	ShotId      string
-	LasterVoter string
-	Snapshot    stafiHubXLedgerTypes.BondSnapshot
-	PoolUnbond  stafiHubXLedgerTypes.PoolUnbond
+	Denom      string
+	ShotId     string
+	Snapshot   stafiHubXLedgerTypes.BondSnapshot
+	PoolUnbond stafiHubXLedgerTypes.PoolUnbond
 }
 
 type EventWithdrawReported struct {
-	Denom       string
-	ShotId      string
-	LasterVoter string
-	Snapshot    stafiHubXLedgerTypes.BondSnapshot
-	PoolUnbond  stafiHubXLedgerTypes.PoolUnbond
+	Denom      string
+	ShotId     string
+	Snapshot   stafiHubXLedgerTypes.BondSnapshot
+	PoolUnbond stafiHubXLedgerTypes.PoolUnbond
 }
 
 type EventTransferReported struct {
-	Denom       string
-	ShotId      string
-	LasterVoter string
+	Denom  string
+	ShotId string
 }
 
 type EventSignatureEnough struct {
@@ -101,9 +96,9 @@ type EventSignatureEnough struct {
 type EventRParamsChanged struct {
 	Denom            string
 	GasPrice         string   `json:"gasPrice"`
-	EraSeconds       string   `json:"eraSeconds"`
+	EraSeconds       uint32   `json:"eraSeconds"`
 	LeastBond        string   `json:"leastBond"`
-	Offset           string   `json:"offset"`
+	Offset           int32    `json:"offset"`
 	TargetValidators []string `json:"targetValidators"`
 }
 
