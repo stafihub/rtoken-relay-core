@@ -1059,8 +1059,8 @@ github.com/stafihub/cosmos-sdk v0.45.1-stafihub-0.0.4 h1:8PkswoRbskzpU8gPhxnx0SB
 github.com/stafihub/cosmos-sdk v0.45.1-stafihub-0.0.4/go.mod h1:XXS/asyCqWNWkx2rW6pSuen+EVcpAFxq6khrhnZgHaQ=
 github.com/stafihub/rtoken-relay-core/common v0.0.0-20220412053337-29d5c40ed019 h1:4viiOKxwsKDcEu7ONbo535wEsajw+HyI2FPzKKq/Wko=
 github.com/stafihub/rtoken-relay-core/common v0.0.0-20220412053337-29d5c40ed019/go.mod h1:6Tk416nJ9OZhbgCwjr8Hsa2H88eFarhytdgfMPcqbB8=
-github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220420100453-614f48cd1334 h1:l23NMqEQwPEHCfGEK8kzxeX9DTipa42kYJxpXtX4V+8=
-github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220420100453-614f48cd1334/go.mod h1:cYlBViYeu693Fv/Y03mqojUYt+BobVbGi80o9bfpRLo=
+github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220422030122-e38e8b97464c h1:ibzVLDUuGngGp2YoZ8eEGUlv891q56y6N2YtFaUMco4=
+github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220422030122-e38e8b97464c/go.mod h1:cYlBViYeu693Fv/Y03mqojUYt+BobVbGi80o9bfpRLo=
 github.com/stafihub/stafihub v0.0.0-20220411153517-276c54bbf4a8 h1:mp4uVYGaApYz82BvmV5+V4ZJVuriXjz58yfQ9GigTqw=
 github.com/stafihub/stafihub v0.0.0-20220411153517-276c54bbf4a8/go.mod h1:rdReo8W1SmrdQYmwSdVaTxwtsp31gNQpHy0/11i/BZg=
 github.com/stafiprotocol/chainbridge v1.0.0 h1:CT5ActFpHt4WEw+VvcCNw/bTLVrrnxK348ro5r0GMds=

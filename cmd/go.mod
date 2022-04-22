@@ -9,7 +9,7 @@ require (
 	github.com/spf13/cobra v1.3.0
 	github.com/stafihub/cosmos-relay-sdk v0.0.0-20220412060100-e5ef4a907984
 	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220412053337-29d5c40ed019
-	github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220420100453-614f48cd1334
+	github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220422030122-e38e8b97464c
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-sdk v1.3.1
 	github.com/urfave/cli/v2 v2.3.0
