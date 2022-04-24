@@ -6,6 +6,8 @@ require (
 	github.com/ChainSafe/log15 v1.0.0
 	github.com/cosmos/cosmos-sdk v0.45.2
 	github.com/ethereum/go-ethereum v1.10.15
+	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
+	github.com/sirupsen/logrus v1.8.1
 	github.com/stafihub/stafihub v0.0.0-20220411153517-276c54bbf4a8
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3
@@ -62,6 +64,7 @@ require (
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/jmhodges/levigo v1.0.0 // indirect
 	github.com/keybase/go-keychain v0.0.0-20190712205309-48d3d31d256d // indirect
+	github.com/lestrrat-go/strftime v1.0.6 // indirect
 	github.com/libp2p/go-buffer-pool v0.0.2 // indirect
 	github.com/magiconair/properties v1.8.5 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
