@@ -4,12 +4,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"strconv"
 
-	log "github.com/ChainSafe/log15"
+	"github.com/sirupsen/logrus"
 	cosmosChain "github.com/stafihub/cosmos-relay-sdk/chain"
 	"github.com/stafihub/rtoken-relay-core/common/config"
 	"github.com/stafihub/rtoken-relay-core/common/core"
+	"github.com/stafihub/rtoken-relay-core/common/log"
 	stafiHubChain "github.com/stafihub/stafi-hub-relay-sdk/chain"
 	"github.com/urfave/cli/v2"
 )
@@ -83,46 +83,24 @@ func init() {
 
 func main() {
 	if err := app.Run(os.Args); err != nil {
-		log.Error(err.Error())
+		logrus.Error(err)
 		os.Exit(1)
 	}
 }
 
-func startLogger(ctx *cli.Context) error {
-	logger := log.Root()
-	var lvl log.Lvl
-	if lvlToInt, err := strconv.Atoi(ctx.String(config.VerbosityFlag.Name)); err == nil {
-		lvl = log.Lvl(lvlToInt)
-	} else if lvl, err = log.LvlFromString(ctx.String(config.VerbosityFlag.Name)); err != nil {
-		return err
-	}
-
-	logger.SetHandler(log.MultiHandler(
-		log.LvlFilterHandler(
-			lvl,
-			log.StreamHandler(os.Stdout, log.LogfmtFormat())),
-		log.Must.FileHandler("relay_log.json", log.JsonFormat()),
-		log.LvlFilterHandler(
-			log.LvlError,
-			log.Must.FileHandler("relay_log_errors.json", log.JsonFormat()))))
-
-	return nil
-}
-
 func run(ctx *cli.Context) error {
-	err := startLogger(ctx)
+	cfg, err := config.GetConfig(ctx)
 	if err != nil {
 		return err
 	}
-
-	cfg, err := config.GetConfig(ctx)
+	err = log.InitLogFile(cfg.LogFilePath)
 	if err != nil {
 		return err
 	}
 
 	// Used to signal core shutdown due to fatal error
 	sysErr := make(chan error)
-	c := core.NewCore(sysErr)
+	c := core.NewCore(log.NewLog(), sysErr)
 
 	// ======================== init stafiHub
 	stafiHubChainConfig := cfg.NativeChain
@@ -141,8 +119,7 @@ func run(ctx *cli.Context) error {
 
 	stafiHubChainConfig.Opts = option
 	stafiHubChain := stafiHubChain.NewChain()
-	logger := log.Root().New("chain", stafiHubChainConfig.Name)
-	err = stafiHubChain.Initialize(&stafiHubChainConfig, logger, sysErr)
+	err = stafiHubChain.Initialize(&stafiHubChainConfig, log.NewLog("chain", stafiHubChainConfig.Name), sysErr)
 	if err != nil {
 		return err
 	}
@@ -202,8 +179,7 @@ func run(ctx *cli.Context) error {
 	cosmosOption.AccountPrefix = prefixRes.GetAddressPrefix()
 	chainConfig.Opts = cosmosOption
 	newChain = cosmosChain.NewChain()
-	externalChainLogger := log.Root().New("chain", chainConfig.Name)
-	err = newChain.Initialize(&chainConfig, externalChainLogger, sysErr)
+	err = newChain.Initialize(&chainConfig, log.NewLog("chain", chainConfig.Name), sysErr)
 	if err != nil {
 		return fmt.Errorf("newChain.Initialize failed: %s", err)
 	}

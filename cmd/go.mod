@@ -6,10 +6,11 @@ require (
 	github.com/ChainSafe/log15 v1.0.0
 	github.com/cosmos/cosmos-sdk v0.45.2
 	github.com/cosmos/ibc-go/v3 v3.0.0
+	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/cobra v1.3.0
-	github.com/stafihub/cosmos-relay-sdk v0.0.0-20220412060100-e5ef4a907984
-	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220412053337-29d5c40ed019
-	github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220422030122-e38e8b97464c
+	github.com/stafihub/cosmos-relay-sdk v0.0.0-20220424145538-fefd1837dd5f
+	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220424145208-9f2acaadb168
+	github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220424150002-0b98ca582dda
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-sdk v1.3.1
 	github.com/urfave/cli/v2 v2.3.0
@@ -75,6 +76,8 @@ require (
 	github.com/jmhodges/levigo v1.0.0 // indirect
 	github.com/keybase/go-keychain v0.0.0-20190712205309-48d3d31d256d // indirect
 	github.com/klauspost/compress v1.13.6 // indirect
+	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible // indirect
+	github.com/lestrrat-go/strftime v1.0.6 // indirect
 	github.com/lib/pq v1.10.4 // indirect
 	github.com/libp2p/go-buffer-pool v0.0.2 // indirect
 	github.com/magiconair/properties v1.8.5 // indirect

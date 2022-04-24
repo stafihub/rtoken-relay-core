@@ -22,7 +22,7 @@ const (
 
 var defaultFormatter = &logrus.TextFormatter{DisableColors: true, FullTimestamp: true}
 
-func initLogFile(logPath string) error {
+func InitLogFile(logPath string) error {
 	if err := clearLockFiles(logPath); err != nil {
 		return err
 	}

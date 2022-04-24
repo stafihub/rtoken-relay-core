@@ -37,6 +37,7 @@ var (
 
 type Config struct {
 	BlockstorePath string         `json:"blockstorePath"`
+	LogFilePath    string         `json:"logFilePath"`
 	NativeChain    RawChainConfig `json:"nativeChain"`
 	ExternalChain  RawChainConfig `json:"externalChain"`
 }
