@@ -1,5 +1,6 @@
 {
   "blockstorePath": "/Users/tpkeeper/gowork/stafihub/rtoken-relay-core/blockstore",
+  "logFilePath": "",
   "nativeChain": {
     "name": "stafi-hub chain",
     "endpoint": "http://127.0.0.1:26657",

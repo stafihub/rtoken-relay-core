@@ -1064,8 +1064,6 @@ github.com/stafihub/cosmos-relay-sdk v0.0.0-20220424145538-fefd1837dd5f h1:AsdMU
 github.com/stafihub/cosmos-relay-sdk v0.0.0-20220424145538-fefd1837dd5f/go.mod h1:EqczlwhbhaW0TNxKBYg+86mP+lJCy8h8LA8fLimCX+8=
 github.com/stafihub/cosmos-sdk v0.45.1-stafihub-0.0.4 h1:8PkswoRbskzpU8gPhxnx0SBWMfbIcFsKph0+Ek4jPac=
 github.com/stafihub/cosmos-sdk v0.45.1-stafihub-0.0.4/go.mod h1:XXS/asyCqWNWkx2rW6pSuen+EVcpAFxq6khrhnZgHaQ=
-github.com/stafihub/rtoken-relay-core/common v0.0.0-20220424145208-9f2acaadb168 h1:raxxoAsZhkwOfkYL0ucnabedVhWAg4uSVy+4W77QvX8=
-github.com/stafihub/rtoken-relay-core/common v0.0.0-20220424145208-9f2acaadb168/go.mod h1:FnqYMT5vkQuXa9Pv51EIOG+oFTWxFf5WTHF618pt6/0=
 github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220424150002-0b98ca582dda h1:q6rGfDxzCO8TLH7c7HZ/66OvC0Oj+S347rq078ecp7Q=
 github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220424150002-0b98ca582dda/go.mod h1:kBdH3Y1QO+dLVfzSC+5YFqGGIKbuKls/2nFklgOXyDM=
 github.com/stafihub/stafihub v0.0.0-20220411153517-276c54bbf4a8 h1:mp4uVYGaApYz82BvmV5+V4ZJVuriXjz58yfQ9GigTqw=

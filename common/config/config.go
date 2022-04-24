@@ -6,16 +6,15 @@ package config
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/urfave/cli/v2"
 	"os"
 	"path/filepath"
-
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/urfave/cli/v2"
 )
 
 const (
 	defaultConfigPath   = "./config.json"
 	defaultKeystorePath = "./keys"
+	defaultLogFilePath  = "./log_file"
 )
 
 var (
@@ -59,10 +58,13 @@ func GetConfig(ctx *cli.Context) (*Config, error) {
 	}
 	err := loadConfig(path, &cfg)
 	if err != nil {
-		log.Warn("err loading json file", "err", err.Error())
+		fmt.Println("err loading json file", "err", err.Error())
 		return nil, err
 	}
-	log.Debug("Loaded config", "path", path)
+	if len(cfg.LogFilePath) == 0 {
+		cfg.LogFilePath = defaultLogFilePath
+	}
+	fmt.Println("Loaded config", "path", path)
 	return &cfg, nil
 }
 
@@ -72,8 +74,6 @@ func loadConfig(file string, config *Config) (err error) {
 	if err != nil {
 		return err
 	}
-
-	log.Debug("Loading configuration", "path", filepath.Clean(fp))
 
 	f, err := os.Open(filepath.Clean(fp))
 	if err != nil {

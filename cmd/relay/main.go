@@ -69,7 +69,7 @@ var accountCommand = cli.Command{
 func init() {
 	app.Action = run
 	app.Copyright = "Copyright 2022 Stafi Protocol Authors"
-	app.Name = "reley"
+	app.Name = "relay"
 	app.Usage = "relay"
 	app.Authors = []*cli.Author{{Name: "Stafi Protocol 2022"}}
 	app.Version = "0.0.1"
