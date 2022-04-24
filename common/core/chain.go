@@ -4,12 +4,12 @@
 package core
 
 import (
-	"github.com/ChainSafe/log15"
 	"github.com/stafihub/rtoken-relay-core/common/config"
+	"github.com/stafihub/rtoken-relay-core/common/log"
 )
 
 type Chain interface {
-	Initialize(cfg *config.RawChainConfig, logger log15.Logger, sysErr chan<- error) error
+	Initialize(cfg *config.RawChainConfig, logger log.Logger, sysErr chan<- error) error
 	Start() error // Start chain
 	SetRouter(*Router)
 	RSymbol() RSymbol

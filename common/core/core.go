@@ -5,27 +5,26 @@ package core
 
 import (
 	"fmt"
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/stafihub/rtoken-relay-core/common/log"
 	"os"
 	"os/signal"
 	"sync"
 	"syscall"
-
-	"github.com/ChainSafe/log15"
-	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 type Core struct {
 	Registry []Chain
 	route    *Router
-	log      log15.Logger
+	log      log.Logger
 	sysErr   <-chan error
 }
 
-func NewCore(sysErr <-chan error) *Core {
+func NewCore(logger log.Logger, sysErr <-chan error) *Core {
 	return &Core{
 		Registry: make([]Chain, 0),
-		route:    NewRouter(log15.New("system", "router")),
-		log:      log15.New("system", "core"),
+		route:    NewRouter(logger),
+		log:      logger,
 		sysErr:   sysErr,
 	}
 }
