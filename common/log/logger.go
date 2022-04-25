@@ -49,7 +49,7 @@ func transField(datas []interface{}) logrus.Fields {
 		if i+1 < len(datas) {
 			field[key] = datas[i+1]
 		} else {
-			field[key] = ""
+			field["field"] = datas[i]
 		}
 	}
 	return field
