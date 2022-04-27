@@ -47,6 +47,7 @@ const (
 	//get reason
 	ReasonGetPools      = Reason("GetPools")
 	ReasonGetSignatures = Reason("GetSignatures")
+	ReasonGetBondRecord = Reason("GetBondRecord")
 )
 
 // === stafihub -> other chain msg data used in cosmos
@@ -162,4 +163,10 @@ type ParamGetSignatures struct {
 	TxType stafiHubXLedgerTypes.OriginalTxType
 	PropId string
 	Sigs   chan []string
+}
+
+type ParamGetBondRecord struct {
+	Denom      string
+	TxHash     string
+	BondRecord chan stafiHubXLedgerTypes.BondRecord
 }

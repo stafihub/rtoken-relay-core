@@ -9,32 +9,31 @@ import (
 	"os"
 	"path/filepath"
 
-	log "github.com/ChainSafe/log15"
+	"github.com/stafihub/rtoken-relay-core/common/config"
 	"github.com/stafiprotocol/chainbridge/utils/crypto"
 	"github.com/stafiprotocol/chainbridge/utils/crypto/secp256k1"
 	"github.com/stafiprotocol/chainbridge/utils/crypto/sr25519"
 	"github.com/stafiprotocol/chainbridge/utils/keystore"
 	bnctypes "github.com/stafiprotocol/go-sdk/common/types"
 	bnckeys "github.com/stafiprotocol/go-sdk/keys"
-	"github.com/stafihub/rtoken-relay-core/common/config"
 	"github.com/urfave/cli/v2"
 )
 
 func handleGenerateSubCmd(ctx *cli.Context) error {
-	log.Info("Generating substrate keyfile by rawseed...")
+	fmt.Println("Generating substrate keyfile by rawseed...")
 	path := ctx.String(config.KeystorePathFlag.Name)
 	network := ctx.String(config.NetworkFlag.Name)
 	return generateKeyFileByRawseed(path, network)
 }
 
 func handleGenerateEthCmd(ctx *cli.Context) error {
-	log.Info("Generating ethereum keyfile by private key...")
+	fmt.Println("Generating ethereum keyfile by private key...")
 	path := ctx.String(config.KeystorePathFlag.Name)
 	return generateKeyFileByPrivateKey(path)
 }
 
 func handleGenerateBcCmd(ctx *cli.Context) error {
-	log.Info("Generating bc chain keyfile by private key...")
+	fmt.Println("Generating bc chain keyfile by private key...")
 	path := ctx.String(config.KeystorePathFlag.Name)
 	network := ctx.String(config.BncNetwork.Name)
 	return generateBcKeyFileByPrivateKey(path, network)
@@ -61,7 +60,7 @@ func generateKeyFileByRawseed(keypath, network string) error {
 	defer func() {
 		err = file.Close()
 		if err != nil {
-			log.Error("generate keypair: could not close keystore file")
+			fmt.Println("generate keypair: could not close keystore file")
 		}
 	}()
 
@@ -71,7 +70,7 @@ func generateKeyFileByRawseed(keypath, network string) error {
 		return fmt.Errorf("could not write key to file: %s", err)
 	}
 
-	log.Info("key generated", "address", kp.Address(), "type", "sub", "file", fp)
+	fmt.Println("key generated ", " address ", kp.Address(), " type ", " sub ", " file ", fp)
 	return nil
 }
 
@@ -104,7 +103,7 @@ func generateKeyFileByPrivateKey(keypath string) error {
 	defer func() {
 		err = file.Close()
 		if err != nil {
-			log.Error("generate keypair: could not close keystore file")
+			fmt.Println("generate keypair: could not close keystore file")
 		}
 	}()
 
@@ -114,7 +113,7 @@ func generateKeyFileByPrivateKey(keypath string) error {
 		return fmt.Errorf("could not write key to file: %s", err)
 	}
 
-	log.Info("key generated", "address", kp.Address(), "type", "eth", "file", fp)
+	fmt.Println("key generated ", " address ", kp.Address(), " type ", " eth ", " file ", fp)
 	return nil
 }
 
@@ -123,7 +122,7 @@ func generateBcKeyFileByPrivateKey(keypath, network string) error {
 	case "test":
 		bnctypes.Network = bnctypes.TestNetwork
 	default:
-		log.Info("bnc network will be ProdNetwork")
+		fmt.Println("bnc network will be ProdNetwork")
 	}
 
 	key := keystore.GetPassword("Enter private key:")
@@ -160,7 +159,7 @@ func generateBcKeyFileByPrivateKey(keypath, network string) error {
 	defer func() {
 		err = file.Close()
 		if err != nil {
-			log.Error("generate keypair: could not close keystore file")
+			fmt.Println("generate keypair: could not close keystore file")
 		}
 	}()
 
@@ -169,6 +168,6 @@ func generateBcKeyFileByPrivateKey(keypath, network string) error {
 		return fmt.Errorf("could not write key to file: %s", err)
 	}
 
-	log.Info("key generated", "address", encrypted.Address, "type", "bc chain", "file", fp)
+	fmt.Println("key generated ", " address ", encrypted.Address, " type ", " bc chain ", " file ", fp)
 	return nil
 }
