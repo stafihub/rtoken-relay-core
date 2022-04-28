@@ -176,7 +176,8 @@ func run(ctx *cli.Context) error {
 	if err != nil {
 		return err
 	}
-	cosmosOption.AccountPrefix = prefixRes.GetAddressPrefix()
+
+	cosmosOption.AccountPrefix = prefixRes.GetAccAddressPrefix()
 	chainConfig.Opts = cosmosOption
 	newChain = cosmosChain.NewChain()
 	err = newChain.Initialize(&chainConfig, log.NewLog("chain", chainConfig.Name), sysErr)
