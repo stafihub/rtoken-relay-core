@@ -8,7 +8,7 @@ require (
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/cobra v1.4.0
 	github.com/stafihub/cosmos-relay-sdk v0.0.0-20220428004728-6b6e54d40a0a
-	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220427142434-64563ec7bc63
+	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220505041337-6ec11dbe0e57
 	github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220428012351-310d6cb9e4a2
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-sdk v1.3.1
@@ -150,5 +150,4 @@ replace (
 	// latest grpc doesn't work with with our modified proto compiler, so we need to enforce
 	// the following version across all dependencies.
 	google.golang.org/grpc => google.golang.org/grpc v1.33.2
-	github.com/stafihub/rtoken-relay-core/common => /Users/tpkeeper/gowork/stafihub/rtoken-relay-core/common
 )
