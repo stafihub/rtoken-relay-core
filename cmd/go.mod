@@ -7,9 +7,9 @@ require (
 	github.com/cosmos/ibc-go/v3 v3.0.0
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/cobra v1.4.0
-	github.com/stafihub/cosmos-relay-sdk v0.0.0-20220428004728-6b6e54d40a0a
-	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220505041337-6ec11dbe0e57
-	github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220428012351-310d6cb9e4a2
+	github.com/stafihub/cosmos-relay-sdk v0.0.0-20220506062222-b39db1f1882f
+	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220506061648-c7abc982361d
+	github.com/stafihub/stafi-hub-relay-sdk v0.0.0-20220506062131-50570abe5897
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/stafiprotocol/go-sdk v1.3.1
 	github.com/urfave/cli/v2 v2.5.0
@@ -111,7 +111,7 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.11.0 // indirect
-	github.com/stafihub/stafihub v0.0.0-20220424072429-cf6e7404228c // indirect
+	github.com/stafihub/stafihub v0.0.0-20220505173950-6d307f410e31 // indirect
 	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3 // indirect
 	github.com/stafiprotocol/tendermint v0.4.0 // indirect
 	github.com/stretchr/testify v1.7.1 // indirect
