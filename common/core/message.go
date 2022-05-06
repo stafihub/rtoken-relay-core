@@ -69,16 +69,8 @@ type EventActiveReported struct {
 	Denom      string
 	ShotId     string
 	Snapshot   stafiHubXLedgerTypes.BondSnapshot
-	PoolUnbond stafiHubXLedgerTypes.PoolUnbond
+	PoolUnbond stafiHubXLedgerTypes.Unbonding
 }
-
-type EventWithdrawReported struct {
-	Denom      string
-	ShotId     string
-	Snapshot   stafiHubXLedgerTypes.BondSnapshot
-	PoolUnbond stafiHubXLedgerTypes.PoolUnbond
-}
-
 type EventTransferReported struct {
 	Denom  string
 	ShotId string
