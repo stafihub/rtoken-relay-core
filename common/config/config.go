@@ -45,7 +45,7 @@ type Config struct {
 type RawChainConfig struct {
 	Name         string      `json:"name"`
 	Rsymbol      string      `json:"rsymbol"`
-	Endpoint     string      `json:"endpoint"` // url for rpc endpoint
+	EndpointList []string    `json:"endpointList"` // url for rpc endpoint
 	KeystorePath string      `json:"keystorePath"`
 	Opts         interface{} `json:"opts"`
 }
