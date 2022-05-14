@@ -3,7 +3,9 @@
   "logFilePath": "",
   "nativeChain": {
     "name": "stafi-hub chain",
-    "endpoint": "http://127.0.0.1:26657",
+    "endpointList": [
+      "http://127.0.0.1:26657"
+    ],
     "keystorePath": "/Users/tpkeeper/gowork/stafihub/rtoken-relay-core/keys/stafihub",
     "opts": {
       "startBlock": 0,
@@ -13,7 +15,9 @@
   },
   "externalChain": {
     "name": "cosmos-hub chain",
-    "endpoint": "http://127.0.0.1:16657",
+    "endpointList": [
+      "http://127.0.0.1:16657"
+    ],
     "rsymbol": "uratom",
     "keystorePath": "/Users/tpkeeper/gowork/stafihub/rtoken-relay-core/keys/cosmoshub",
     "opts": {
