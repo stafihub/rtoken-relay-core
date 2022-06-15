@@ -1,13 +1,12 @@
 package main
 
 import (
+	"context"
 	"os"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/client/keys"
-	"github.com/cosmos/cosmos-sdk/server"
-	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 	"github.com/spf13/cobra"
 )
 
@@ -32,11 +31,7 @@ func main() {
 			}
 
 			SetPrefixes(prefix)
-			if err := client.SetCmdClientContextHandler(initClientCtx, cmd); err != nil {
-				return err
-			}
-
-			return server.InterceptConfigsPreRunHandler(cmd, "", nil)
+			return client.SetCmdClientContextHandler(initClientCtx, cmd)
 		},
 	}
 
@@ -56,6 +51,12 @@ func main() {
 	rootCmd.PersistentFlags().String(flags.FlagKeyringDir, "", "The client Keyring directory; if omitted, the default 'home' directory will be used")
 	rootCmd.PersistentFlags().String(flags.FlagKeyringBackend, "file", "Select keyring's backend (os|file|test)")
 	rootCmd.PersistentFlags().String("output", "text", "Output format (text|json)")
+	rootCmd.PersistentFlags().StringP("home", "", defaultNodeHome, "Directory for config and data")
 
-	svrcmd.Execute(rootCmd, defaultNodeHome)
+	ctx := context.Background()
+	ctx = context.WithValue(ctx, client.ClientContextKey, &client.Context{})
+
+	if err := rootCmd.ExecuteContext(ctx); err != nil {
+		os.Exit(1)
+	}
 }
