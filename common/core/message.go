@@ -87,12 +87,14 @@ type EventSignatureEnough struct {
 }
 
 type EventRValidatorUpdated struct {
-	Denom        string
-	PoolAddress  string
-	OldAddress   string
-	NewAddress   string
-	CycleVersion uint64
-	CycleNumber  uint64
+	Denom         string
+	PoolAddress   string
+	Era           uint32
+	PoolBondState stafiHubXLedgerTypes.PoolBondState
+	OldAddress    string
+	NewAddress    string
+	CycleVersion  uint64
+	CycleNumber   uint64
 }
 
 type EventRParamsChanged struct {
