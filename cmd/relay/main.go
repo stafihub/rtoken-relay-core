@@ -168,7 +168,7 @@ func run(ctx *cli.Context) error {
 
 	cosmosOption.EraSeconds = rParams.RParams.EraSeconds
 	cosmosOption.GasPrice = rParams.RParams.GasPrice
-	cosmosOption.TargetValidators = rParams.RParams.Validators
+	// cosmosOption.TargetValidators = rParams.RParams.Validators
 	cosmosOption.LeastBond = rParams.RParams.LeastBond
 	cosmosOption.Offset = rParams.RParams.Offset
 	// prepare account prefix from stafihub
