@@ -155,29 +155,41 @@ func run(ctx *cli.Context) error {
 		return err
 	}
 	cosmosOption.PoolAddressThreshold = make(map[string]uint32)
-	for _, poolAddress := range poolRes.GetAddrs() {
-		poolDetail, err := stafiHubChain.GetPoolDetail(rParams.RParams.Denom, poolAddress)
+	for _, poolAddressStr := range poolRes.GetAddrs() {
+		// get pool threshold
+		poolDetail, err := stafiHubChain.GetPoolDetail(rParams.RParams.Denom, poolAddressStr)
 		if err != nil {
 			return err
 		}
 		if poolDetail.Detail.Threshold <= 0 {
-			return fmt.Errorf("pool threshold is zero in stafihub, pool: %s", poolAddress)
+			return fmt.Errorf("pool threshold is zero in stafihub, pool: %s", poolAddressStr)
 		}
-		cosmosOption.PoolAddressThreshold[poolAddress] = poolDetail.Detail.Threshold
+		cosmosOption.PoolAddressThreshold[poolAddressStr] = poolDetail.Detail.Threshold
+
+		// get pool targetValidators
+		selectedValidators, err := stafiHubChain.GetSelectedValidators(rParams.RParams.Denom, poolAddressStr)
+		if err != nil {
+			return err
+		}
+		if len(selectedValidators.RValidatorList) <= 0 {
+			return fmt.Errorf("pool selected validators is empty, pool: %s", poolAddressStr)
+		}
+
+		cosmosOption.PoolTargetValidators[poolAddressStr] = selectedValidators.RValidatorList
 	}
 
 	cosmosOption.EraSeconds = rParams.RParams.EraSeconds
 	cosmosOption.GasPrice = rParams.RParams.GasPrice
-	// cosmosOption.TargetValidators = rParams.RParams.Validators
 	cosmosOption.LeastBond = rParams.RParams.LeastBond
 	cosmosOption.Offset = rParams.RParams.Offset
+
 	// prepare account prefix from stafihub
 	prefixRes, err := stafiHubChain.GetAddressPrefix(chainConfig.Rsymbol)
 	if err != nil {
 		return err
 	}
-
 	cosmosOption.AccountPrefix = prefixRes.GetAccAddressPrefix()
+
 	chainConfig.Opts = cosmosOption
 	newChain = cosmosChain.NewChain()
 	err = newChain.Initialize(&chainConfig, log.NewLog("chain", chainConfig.Name), sysErr)
