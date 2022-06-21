@@ -16,13 +16,14 @@ type Reason string
 
 const (
 	//send from other chain
-	ReasonNewEra           = Reason("NewEra")
-	ReasonExeLiquidityBond = Reason("ExeLiquidityBond")
-	ReasonBondReport       = Reason("BondReport")
-	ReasonActiveReport     = Reason("ActiveReport")
-	ReasonWithdrawReport   = Reason("WithdrawReport")
-	ReasonTransferReport   = Reason("TransferReport")
-	ReasonSubmitSignature  = Reason("SubmitSignature")
+	ReasonNewEra                 = Reason("NewEra")
+	ReasonExeLiquidityBond       = Reason("ExeLiquidityBond")
+	ReasonBondReport             = Reason("BondReport")
+	ReasonActiveReport           = Reason("ActiveReport")
+	ReasonWithdrawReport         = Reason("WithdrawReport")
+	ReasonTransferReport         = Reason("TransferReport")
+	ReasonSubmitSignature        = Reason("SubmitSignature")
+	ReasonRValidatorUpdateReport = Reason("RValidatorUpdateReport")
 
 	ReasonCurrentChainEra  = Reason("CurrentChainEra")
 	ReasonBondedPools      = Reason("BondedPools")
@@ -87,14 +88,13 @@ type EventSignatureEnough struct {
 }
 
 type EventRValidatorUpdated struct {
-	Denom         string
-	PoolAddress   string
-	Era           uint32
-	PoolBondState stafiHubXLedgerTypes.PoolBondState
-	OldAddress    string
-	NewAddress    string
-	CycleVersion  uint64
-	CycleNumber   uint64
+	Denom        string
+	PoolAddress  string
+	Era          uint32
+	OldAddress   string
+	NewAddress   string
+	CycleVersion uint64
+	CycleNumber  uint64
 }
 
 type EventRParamsChanged struct {
@@ -141,6 +141,13 @@ type ProposalWithdrawReport struct {
 type ProposalTransferReport struct {
 	Denom  string
 	ShotId string
+}
+
+type ProposalRValidatorUpdateReport struct {
+	Denom        string
+	PoolAddress  string
+	CycleVersion uint64
+	CycleNumber  uint64
 }
 
 type ParamSubmitSignature struct {
