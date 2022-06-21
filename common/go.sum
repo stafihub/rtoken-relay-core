@@ -981,8 +981,8 @@ github.com/spf13/viper v1.7.1/go.mod h1:8WkrPz2fc9jxqZNCJI/76HCieCp4Q8HaLFoCha5q
 github.com/spf13/viper v1.8.1/go.mod h1:o0Pch8wJ9BVSWGQMbra6iw0oQ5oktSIBaujf1rJH9Ns=
 github.com/spf13/viper v1.10.1 h1:nuJZuYpG7gTj/XqiUwg8bA0cp1+M2mC3J4g5luUYBKk=
 github.com/spf13/viper v1.10.1/go.mod h1:IGlFPqhNAPKRxohIzWpI5QEy4kuI7tcl5WvR+8qy1rU=
-github.com/stafihub/stafihub v0.0.0-20220620003407-36a0ae552c35 h1:1pr+gIyV0W0vfxitS6FfHLRJz2b2fv58zS/YfagG+SU=
-github.com/stafihub/stafihub v0.0.0-20220620003407-36a0ae552c35/go.mod h1:oMnKnPCkdNZvpEc2dlt3UazqDQesb94n7pzVlIMUPbc=
+github.com/stafihub/stafihub v0.0.0-20220621084304-a61a0393efab h1:GJhLcDswDy7s/8na/T0B/lS13lBIM1rbYCMQrenkeh8=
+github.com/stafihub/stafihub v0.0.0-20220621084304-a61a0393efab/go.mod h1:oMnKnPCkdNZvpEc2dlt3UazqDQesb94n7pzVlIMUPbc=
 github.com/stafiprotocol/chainbridge v1.0.0 h1:CT5ActFpHt4WEw+VvcCNw/bTLVrrnxK348ro5r0GMds=
 github.com/stafiprotocol/chainbridge v1.0.0/go.mod h1:yJs9Zg9VbF6QtDO5a+CsfwQCcL9PojKWnCd040JRWlE=
 github.com/stafiprotocol/go-substrate-rpc-client v1.0.9/go.mod h1:P3xucNyw6UjKvCvGg0eiQJhcRyZsUv5a9akxDTLMHFk=
