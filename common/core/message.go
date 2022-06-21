@@ -95,6 +95,7 @@ type EventRValidatorUpdated struct {
 	NewAddress   string
 	CycleVersion uint64
 	CycleNumber  uint64
+	CycleSeconds uint64
 }
 
 type EventRParamsChanged struct {
