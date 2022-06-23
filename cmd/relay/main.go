@@ -93,6 +93,14 @@ func run(ctx *cli.Context) error {
 	if err != nil {
 		return err
 	}
+	verbosity := ctx.String(config.VerbosityFlag.Name)
+	if verbosity != "" {
+		level, err := logrus.ParseLevel(verbosity)
+		if err != nil {
+			return err
+		}
+		logrus.SetLevel(level)
+	}
 	err = log.InitLogFile(cfg.LogFilePath)
 	if err != nil {
 		return err
@@ -154,7 +162,9 @@ func run(ctx *cli.Context) error {
 	if err != nil {
 		return err
 	}
+
 	cosmosOption.PoolAddressThreshold = make(map[string]uint32)
+	cosmosOption.PoolTargetValidators = make(map[string][]string)
 	for _, poolAddressStr := range poolRes.GetAddrs() {
 		// get pool threshold
 		poolDetail, err := stafiHubChain.GetPoolDetail(rParams.RParams.Denom, poolAddressStr)
@@ -174,7 +184,6 @@ func run(ctx *cli.Context) error {
 		if len(selectedValidators.RValidatorList) <= 0 {
 			return fmt.Errorf("pool selected validators is empty, pool: %s", poolAddressStr)
 		}
-
 		cosmosOption.PoolTargetValidators[poolAddressStr] = selectedValidators.RValidatorList
 	}
 
