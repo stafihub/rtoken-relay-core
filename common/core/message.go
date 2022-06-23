@@ -44,7 +44,6 @@ const (
 	ReasonSignatureEnoughEvent   = Reason("SignatureEnoughed")
 	ReasonRValidatorUpdatedEvent = Reason("RValidatorUpdatedEvent")
 	ReasonRValidatorAddedEvent   = Reason("RValidatorAddedEvent")
-	ReasonRValidatorRemovedEvent = Reason("RValidatorRemovedEvent")
 	ReasonRParamsChangedEvent    = Reason("RParamsChangedEvent")
 
 	//get reason
@@ -104,12 +103,6 @@ type EventRValidatorAdded struct {
 	PoolAddress  string
 	Era          uint32
 	AddedAddress string
-}
-type EventRValidatorRemoved struct {
-	Denom          string
-	PoolAddress    string
-	Era            uint32
-	RemovedAddress string
 }
 
 type EventRParamsChanged struct {
