@@ -43,6 +43,8 @@ const (
 	ReasonNominationUpdatedEvent = Reason("NominationUpdatedEvent")
 	ReasonSignatureEnoughEvent   = Reason("SignatureEnoughed")
 	ReasonRValidatorUpdatedEvent = Reason("RValidatorUpdatedEvent")
+	ReasonRValidatorAddedEvent   = Reason("RValidatorAddedEvent")
+	ReasonRValidatorRemovedEvent = Reason("RValidatorRemovedEvent")
 	ReasonRParamsChangedEvent    = Reason("RParamsChangedEvent")
 
 	//get reason
@@ -96,6 +98,18 @@ type EventRValidatorUpdated struct {
 	CycleVersion uint64
 	CycleNumber  uint64
 	CycleSeconds uint64
+}
+type EventRValidatorAdded struct {
+	Denom        string
+	PoolAddress  string
+	Era          uint32
+	AddedAddress string
+}
+type EventRValidatorRemoved struct {
+	Denom          string
+	PoolAddress    string
+	Era            uint32
+	RemovedAddress string
 }
 
 type EventRParamsChanged struct {
