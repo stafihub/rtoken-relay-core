@@ -20,27 +20,15 @@ const (
 	ReasonExeLiquidityBond       = Reason("ExeLiquidityBond")
 	ReasonBondReport             = Reason("BondReport")
 	ReasonActiveReport           = Reason("ActiveReport")
-	ReasonWithdrawReport         = Reason("WithdrawReport")
 	ReasonTransferReport         = Reason("TransferReport")
 	ReasonSubmitSignature        = Reason("SubmitSignature")
 	ReasonRValidatorUpdateReport = Reason("RValidatorUpdateReport")
 
-	ReasonCurrentChainEra  = Reason("CurrentChainEra")
-	ReasonBondedPools      = Reason("BondedPools")
-	ReasonNewMultisig      = Reason("AsMulti")
-	ReasonMultisigExecuted = Reason("MultisigExecuted")
-	ReasonGetEraNominated  = Reason("GetEraNominated")
-
-	//send when got event from stafi chain
-	ReasonLiquidityBondEvent = Reason("LiquidityBondEvent")
-
-	//send when got event from stafi/stafihub chain
+	//send when got event from stafihub chain
 	ReasonEraPoolUpdatedEvent    = Reason("EraPoolUpdatedEvent")
 	ReasonBondReportedEvent      = Reason("BondReportedEvent")
 	ReasonActiveReportedEvent    = Reason("ActiveReportedEvent")
-	ReasonWithdrawReportedEvent  = Reason("WithdrawReportedEvent")
 	ReasonTransferReportedEvent  = Reason("TransferReportedEvent")
-	ReasonNominationUpdatedEvent = Reason("NominationUpdatedEvent")
 	ReasonSignatureEnoughEvent   = Reason("SignatureEnoughed")
 	ReasonRValidatorUpdatedEvent = Reason("RValidatorUpdatedEvent")
 	ReasonRValidatorAddedEvent   = Reason("RValidatorAddedEvent")

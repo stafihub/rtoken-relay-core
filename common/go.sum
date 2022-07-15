@@ -241,8 +241,8 @@ github.com/coreos/pkg v0.0.0-20160727233714-3ac0863d7acf/go.mod h1:E3G3o1h8I7cfc
 github.com/coreos/pkg v0.0.0-20180928190104-399ea9e2e55f/go.mod h1:E3G3o1h8I7cfcXa63jLwjI0eiQQMgzzUDFVpN/nH/eA=
 github.com/cosmos/btcutil v1.0.4 h1:n7C2ngKXo7UC9gNyMNLbzqz7Asuf+7Qv4gnX/rOdQ44=
 github.com/cosmos/btcutil v1.0.4/go.mod h1:Ffqc8Hn6TJUdDgHBwIZLtrLQC1KdJ9jGJl/TvgUaxbU=
-github.com/cosmos/cosmos-sdk v0.45.5 h1:GVrZM+lss6y626Pq6loxh/3KLRgK/J6/alTkcKkYmGU=
-github.com/cosmos/cosmos-sdk v0.45.5/go.mod h1:WOqtDxN3eCCmnYLVla10xG7lEXkFjpTaqm2a2WasgCc=
+github.com/cosmos/cosmos-sdk v0.45.6 h1:bnYLOcDp0cKWMLeUTTJIttq6xxRep52ulPxXC3BCfuQ=
+github.com/cosmos/cosmos-sdk v0.45.6/go.mod h1:bPeeVMEtVvH3y3xAGHVbK+/CZlpaazzh77hG8ZrcJpI=
 github.com/cosmos/go-bip39 v0.0.0-20180819234021-555e2067c45d/go.mod h1:tSxLoYXyBmiFeKpvmq4dzayMdCjCnu8uqmCysIGBT2Y=
 github.com/cosmos/go-bip39 v1.0.0 h1:pcomnQdrdH22njcAatO0yWojsUnCO3y2tNoV1cb6hHY=
 github.com/cosmos/go-bip39 v1.0.0/go.mod h1:RNJv0H/pOIVgxw6KS7QeX2a0Uo0aKUlfhZ4xuwvCdJw=
@@ -981,8 +981,8 @@ github.com/spf13/viper v1.7.1/go.mod h1:8WkrPz2fc9jxqZNCJI/76HCieCp4Q8HaLFoCha5q
 github.com/spf13/viper v1.8.1/go.mod h1:o0Pch8wJ9BVSWGQMbra6iw0oQ5oktSIBaujf1rJH9Ns=
 github.com/spf13/viper v1.10.1 h1:nuJZuYpG7gTj/XqiUwg8bA0cp1+M2mC3J4g5luUYBKk=
 github.com/spf13/viper v1.10.1/go.mod h1:IGlFPqhNAPKRxohIzWpI5QEy4kuI7tcl5WvR+8qy1rU=
-github.com/stafihub/stafihub v0.0.0-20220623075958-3655a36da581 h1:U2KUIjbqVDfwMTEI/TJbOLCMroO0WqBFDAHi/RpLDEQ=
-github.com/stafihub/stafihub v0.0.0-20220623075958-3655a36da581/go.mod h1:oMnKnPCkdNZvpEc2dlt3UazqDQesb94n7pzVlIMUPbc=
+github.com/stafihub/stafihub v0.0.0-20220715005022-772f99c0e3b6 h1:75SSrny3wn8BflC5lv64UpFPNxhA/2NXsrU5HrFtMp8=
+github.com/stafihub/stafihub v0.0.0-20220715005022-772f99c0e3b6/go.mod h1:4RZNcl0rq0/RgNYUhbbT2G82El8eqgBqy9dCkGsE3Yc=
 github.com/stafiprotocol/chainbridge v1.0.0 h1:CT5ActFpHt4WEw+VvcCNw/bTLVrrnxK348ro5r0GMds=
 github.com/stafiprotocol/chainbridge v1.0.0/go.mod h1:yJs9Zg9VbF6QtDO5a+CsfwQCcL9PojKWnCd040JRWlE=
 github.com/stafiprotocol/go-substrate-rpc-client v1.0.9/go.mod h1:P3xucNyw6UjKvCvGg0eiQJhcRyZsUv5a9akxDTLMHFk=

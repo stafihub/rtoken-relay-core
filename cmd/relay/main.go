@@ -21,50 +21,6 @@ var mainFlags = []cli.Flag{
 	config.VerbosityFlag,
 }
 
-var generateFlags = []cli.Flag{
-	config.KeystorePathFlag,
-	config.NetworkFlag,
-}
-
-var bncGenerateFlags = []cli.Flag{
-	config.KeystorePathFlag,
-	config.BncNetwork,
-}
-
-var accountCommand = cli.Command{
-	Name:  "accounts",
-	Usage: "manage reth keystore",
-	Description: "The accounts command is used to manage the relay keystore.\n" +
-		"\tMake sure the keystore dir is exist before generating\n" +
-		"\tTo generate a substrate keystore: relay accounts gensub\n" +
-		"\tTo generate a ethereum keystore: relay accounts geneth\n" +
-		"\tTo generate a bc chain keystore: relay accounts genbc\n" +
-		"\tTo list keys: chainbridge accounts list",
-	Subcommands: []*cli.Command{
-		{
-			Action:      handleGenerateSubCmd,
-			Name:        "gensub",
-			Usage:       "generate subsrate keystore",
-			Flags:       generateFlags,
-			Description: "The generate subcommand is used to generate the substrate keystore.",
-		},
-		{
-			Action:      handleGenerateEthCmd,
-			Name:        "geneth",
-			Usage:       "generate ethereum keystore",
-			Flags:       generateFlags,
-			Description: "The generate subcommand is used to generate the ethereum keystore.",
-		},
-		{
-			Action:      handleGenerateBcCmd,
-			Name:        "genbc",
-			Usage:       "generate binance chain keystore",
-			Flags:       bncGenerateFlags,
-			Description: "The generate subcommand is used to generate the binance chain keystore.",
-		},
-	},
-}
-
 // init initializes CLI
 func init() {
 	app.Action = run
@@ -74,9 +30,7 @@ func init() {
 	app.Authors = []*cli.Author{{Name: "Stafi Protocol 2022"}}
 	app.Version = "2.0.0"
 	app.EnableBashCompletion = true
-	app.Commands = []*cli.Command{
-		&accountCommand,
-	}
+	app.Commands = []*cli.Command{}
 
 	app.Flags = append(app.Flags, mainFlags...)
 }
@@ -112,7 +66,7 @@ func run(ctx *cli.Context) error {
 
 	// ======================== init stafiHub
 	stafiHubChainConfig := cfg.NativeChain
-	stafiHubChainConfig.Rsymbol = string(core.RFIS)
+	stafiHubChainConfig.Rsymbol = string(core.HubRFIS)
 	bts, err := json.Marshal(stafiHubChainConfig.Opts)
 	if err != nil {
 		return err
