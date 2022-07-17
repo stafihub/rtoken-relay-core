@@ -11,6 +11,7 @@ import (
 	"github.com/stafihub/rtoken-relay-core/common/core"
 	"github.com/stafihub/rtoken-relay-core/common/log"
 	stafiHubChain "github.com/stafihub/stafi-hub-relay-sdk/chain"
+	stafiHubXLedgerTypes "github.com/stafihub/stafihub/x/ledger/types"
 	"github.com/urfave/cli/v2"
 )
 
@@ -117,20 +118,37 @@ func run(ctx *cli.Context) error {
 		return err
 	}
 
+	icaPoolsRes, err := stafiHubChain.GetIcaPools(rParams.RParams.Denom)
+	if err != nil {
+		return err
+	}
+	icaPoolsMap := make(map[string]bool)
+	for _, value := range icaPoolsRes.IcaPoolList {
+		if value.Status == stafiHubXLedgerTypes.IcaPoolStatusSetWithdraw {
+			icaPoolsMap[value.DelegationAccount.Address] = true
+		}
+	}
+
 	cosmosOption.PoolAddressThreshold = make(map[string]uint32)
 	cosmosOption.PoolTargetValidators = make(map[string][]string)
+	bondedIcaPools := make([]string, 0)
 	for _, poolAddressStr := range poolRes.GetAddrs() {
-		// get pool threshold
-		poolDetail, err := stafiHubChain.GetPoolDetail(rParams.RParams.Denom, poolAddressStr)
-		if err != nil {
-			return err
+		// filter icapool
+		if icaPoolsMap[poolAddressStr] {
+			bondedIcaPools = append(bondedIcaPools, poolAddressStr)
+		} else {
+			// get pool threshold
+			poolDetail, err := stafiHubChain.GetPoolDetail(rParams.RParams.Denom, poolAddressStr)
+			if err != nil {
+				return err
+			}
+			if poolDetail.Detail.Threshold <= 0 {
+				return fmt.Errorf("pool threshold is zero in stafihub, pool: %s", poolAddressStr)
+			}
+			cosmosOption.PoolAddressThreshold[poolAddressStr] = poolDetail.Detail.Threshold
 		}
-		if poolDetail.Detail.Threshold <= 0 {
-			return fmt.Errorf("pool threshold is zero in stafihub, pool: %s", poolAddressStr)
-		}
-		cosmosOption.PoolAddressThreshold[poolAddressStr] = poolDetail.Detail.Threshold
 
-		// get pool targetValidators
+		// get pool targetValidators from rvalidator
 		selectedValidators, err := stafiHubChain.GetSelectedValidators(rParams.RParams.Denom, poolAddressStr)
 		if err != nil {
 			return err
@@ -145,6 +163,8 @@ func run(ctx *cli.Context) error {
 	cosmosOption.GasPrice = rParams.RParams.GasPrice
 	cosmosOption.LeastBond = rParams.RParams.LeastBond
 	cosmosOption.Offset = rParams.RParams.Offset
+
+	cosmosOption.IcaPools = bondedIcaPools
 
 	// prepare account prefix from stafihub
 	prefixRes, err := stafiHubChain.GetAddressPrefix(chainConfig.Rsymbol)

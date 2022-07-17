@@ -23,6 +23,7 @@ const (
 	ReasonTransferReport         = Reason("TransferReport")
 	ReasonSubmitSignature        = Reason("SubmitSignature")
 	ReasonRValidatorUpdateReport = Reason("RValidatorUpdateReport")
+	ReasonInterchainTx           = Reason("InterchainTx")
 
 	//send when got event from stafihub chain
 	ReasonEraPoolUpdatedEvent    = Reason("EraPoolUpdatedEvent")
@@ -35,9 +36,10 @@ const (
 	ReasonRParamsChangedEvent    = Reason("RParamsChangedEvent")
 
 	//get reason
-	ReasonGetPools      = Reason("GetPools")
-	ReasonGetSignatures = Reason("GetSignatures")
-	ReasonGetBondRecord = Reason("GetBondRecord")
+	ReasonGetPools          = Reason("GetPools")
+	ReasonGetSignatures     = Reason("GetSignatures")
+	ReasonGetBondRecord     = Reason("GetBondRecord")
+	ReasonGetProposalStatus = Reason("GetProposalStatus")
 )
 
 // === stafihub -> other chain msg data used in cosmos
@@ -144,6 +146,10 @@ type ProposalRValidatorUpdateReport struct {
 	PoolAddress  string
 	CycleVersion uint64
 	CycleNumber  uint64
+}
+
+type ProposalInterchainTx struct {
+	TxType stafiHubXLedgerTypes.InterchainTxProposal
 }
 
 type ParamSubmitSignature struct {
