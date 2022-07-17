@@ -149,7 +149,7 @@ type ProposalRValidatorUpdateReport struct {
 }
 
 type ProposalInterchainTx struct {
-	TxType stafiHubXLedgerTypes.InterchainTxProposal
+	InterchainTx stafiHubXLedgerTypes.InterchainTxProposal
 }
 
 type ParamSubmitSignature struct {
@@ -180,4 +180,9 @@ type ParamGetBondRecord struct {
 	Denom      string
 	TxHash     string
 	BondRecord chan stafiHubXLedgerTypes.BondRecord
+}
+
+type ParamGetProposalStatus struct {
+	PropId string
+	Status chan stafiHubXLedgerTypes.InterchainTxStatus
 }
