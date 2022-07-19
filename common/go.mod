@@ -7,7 +7,7 @@ require (
 	github.com/ethereum/go-ethereum v1.10.15
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
 	github.com/sirupsen/logrus v1.8.1
-	github.com/stafihub/stafihub v0.0.0-20220715005022-772f99c0e3b6
+	github.com/stafihub/stafihub v0.0.0-20220719084324-096aa8cc5c8f
 	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/urfave/cli/v2 v2.3.0
 	golang.org/x/crypto v0.0.0-20220126234351-aa10faf2a1f8
