@@ -8,8 +8,9 @@ require (
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/cobra v1.4.0
 	github.com/stafihub/cosmos-relay-sdk v1.5.2
-	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220715043131-1a04dd0ecc90
+	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220717141918-89b0d8ad0cc5
 	github.com/stafihub/stafi-hub-relay-sdk v1.3.2
+	github.com/stafihub/stafihub v0.0.0-20220715005022-772f99c0e3b6
 	github.com/urfave/cli/v2 v2.5.0
 )
 
@@ -93,7 +94,6 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.11.0 // indirect
-	github.com/stafihub/stafihub v0.0.0-20220715005022-772f99c0e3b6 // indirect
 	github.com/stafiprotocol/chainbridge v1.0.0 // indirect
 	github.com/stretchr/testify v1.7.1 // indirect
 	github.com/subosito/gotenv v1.2.0 // indirect

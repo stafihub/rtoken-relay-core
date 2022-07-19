@@ -36,10 +36,10 @@ const (
 	ReasonRParamsChangedEvent    = Reason("RParamsChangedEvent")
 
 	//get reason
-	ReasonGetPools          = Reason("GetPools")
-	ReasonGetSignatures     = Reason("GetSignatures")
-	ReasonGetBondRecord     = Reason("GetBondRecord")
-	ReasonGetProposalStatus = Reason("GetProposalStatus")
+	ReasonGetPools              = Reason("GetPools")
+	ReasonGetSignatures         = Reason("GetSignatures")
+	ReasonGetBondRecord         = Reason("GetBondRecord")
+	ReasonGetInterchainTxStatus = Reason("GetInterchainTxStatus")
 )
 
 // === stafihub -> other chain msg data used in cosmos
@@ -149,7 +149,12 @@ type ProposalRValidatorUpdateReport struct {
 }
 
 type ProposalInterchainTx struct {
-	InterchainTx stafiHubXLedgerTypes.InterchainTxProposal
+	Denom  string
+	Pool   string
+	Era    uint32
+	TxType stafiHubXLedgerTypes.OriginalTxType
+	Factor uint32
+	Msgs   []sdk.Msg
 }
 
 type ParamSubmitSignature struct {
@@ -182,7 +187,7 @@ type ParamGetBondRecord struct {
 	BondRecord chan stafiHubXLedgerTypes.BondRecord
 }
 
-type ParamGetProposalStatus struct {
+type ParamGetInterchainTxStatus struct {
 	PropId string
 	Status chan stafiHubXLedgerTypes.InterchainTxStatus
 }
