@@ -104,9 +104,6 @@ func run(ctx *cli.Context) error {
 	}
 
 	cosmosOption.BlockstorePath = cfg.BlockstorePath
-	if len(cosmosOption.PoolNameSubKey) == 0 {
-		return fmt.Errorf("no pool and subkey")
-	}
 
 	// prepare r params from stafihub
 	rParams, err := stafiHubChain.GetRParams(chainConfig.Rsymbol)
@@ -122,20 +119,28 @@ func run(ctx *cli.Context) error {
 	if err != nil {
 		return err
 	}
-	icaPoolsMap := make(map[string]bool)
+	if len(cosmosOption.PoolNameSubKey) == 0 && len(icaPoolsRes.IcaPoolList) == 0 {
+		return fmt.Errorf("no pool")
+	}
+
+	icaPoolsMap := make(map[string]string)
+	icaPoolCtrlChannel := make(map[string]string)
+
 	for _, value := range icaPoolsRes.IcaPoolList {
-		if value.Status == stafiHubXLedgerTypes.IcaPoolStatusSetWithdraw {
-			icaPoolsMap[value.DelegationAccount.Address] = true
+		if value.Status == stafiHubXLedgerTypes.IcaPoolStatusSetWithdrawal {
+			icaPoolsMap[value.DelegationAccount.Address] = value.WithdrawalAccount.Address
+			icaPoolCtrlChannel[value.DelegationAccount.Address] = value.DelegationAccount.CtrlChannelId
 		}
 	}
 
 	cosmosOption.PoolAddressThreshold = make(map[string]uint32)
 	cosmosOption.PoolTargetValidators = make(map[string][]string)
-	bondedIcaPools := make([]string, 0)
+	bondedIcaPoolWithdrawalAddr := make(map[string]string)
+
 	for _, poolAddressStr := range poolRes.GetAddrs() {
 		// filter icapool
-		if icaPoolsMap[poolAddressStr] {
-			bondedIcaPools = append(bondedIcaPools, poolAddressStr)
+		if withdrawalAddr, exist := icaPoolsMap[poolAddressStr]; exist {
+			bondedIcaPoolWithdrawalAddr[poolAddressStr] = withdrawalAddr
 		} else {
 			// get pool threshold
 			poolDetail, err := stafiHubChain.GetPoolDetail(rParams.RParams.Denom, poolAddressStr)
@@ -164,7 +169,8 @@ func run(ctx *cli.Context) error {
 	cosmosOption.LeastBond = rParams.RParams.LeastBond
 	cosmosOption.Offset = rParams.RParams.Offset
 
-	cosmosOption.IcaPools = bondedIcaPools
+	cosmosOption.IcaPoolWithdrawalAddr = bondedIcaPoolWithdrawalAddr
+	cosmosOption.IcaPoolCtrlChannel = icaPoolCtrlChannel
 
 	// prepare account prefix from stafihub
 	prefixRes, err := stafiHubChain.GetAddressPrefix(chainConfig.Rsymbol)

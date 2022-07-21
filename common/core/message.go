@@ -3,6 +3,7 @@ package core
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	stafiHubXLedgerTypes "github.com/stafihub/stafihub/x/ledger/types"
+	stafiHubXRValidatorTypes "github.com/stafihub/stafihub/x/rvalidator/types"
 )
 
 type Message struct {
@@ -146,6 +147,7 @@ type ProposalRValidatorUpdateReport struct {
 	PoolAddress  string
 	CycleVersion uint64
 	CycleNumber  uint64
+	Status       stafiHubXRValidatorTypes.UpdateRValidatorStatus
 }
 
 type ProposalInterchainTx struct {
