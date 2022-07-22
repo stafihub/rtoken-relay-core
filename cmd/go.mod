@@ -7,10 +7,10 @@ require (
 	github.com/cosmos/ibc-go/v3 v3.1.0
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/cobra v1.4.0
-	github.com/stafihub/cosmos-relay-sdk v1.5.2
-	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220719085217-2ed4b28195c0
-	github.com/stafihub/stafi-hub-relay-sdk v1.3.2
-	github.com/stafihub/stafihub v0.0.0-20220721150152-4a0ac3ba110f
+	github.com/stafihub/cosmos-relay-sdk v1.6.0
+	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220721160233-0ec45ccdb38c
+	github.com/stafihub/stafi-hub-relay-sdk v1.4.0
+	github.com/stafihub/stafihub v0.0.0-20220722033556-a7f1649273a5
 	github.com/urfave/cli/v2 v2.5.0
 )
 
@@ -124,8 +124,6 @@ replace (
 	github.com/cosmos/cosmos-sdk => github.com/tpkeeper/cosmos-sdk v0.45.4-stafihub-0.0.1
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
-	github.com/stafihub/cosmos-relay-sdk => /Users/tpkeeper/gowork/stafihub/cosmos-relay-sdk
-	github.com/stafihub/stafi-hub-relay-sdk => /Users/tpkeeper/gowork/stafihub/stafi-hub-relay-sdk
 	// latest grpc doesn't work with with our modified proto compiler, so we need to enforce
 	// the following version across all dependencies.
 	google.golang.org/grpc => google.golang.org/grpc v1.33.2
