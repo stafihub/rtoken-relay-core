@@ -4,7 +4,7 @@
   "nativeChain": {
     "name": "stafi-hub chain",
     "endpointList": [
-      "http://127.0.0.1:26657"
+      "https://dev-rpc1.stafihub.io:443"
     ],
     "keystorePath": "/Users/tpkeeper/gowork/stafihub/rtoken-relay-core/keys/stafihub",
     "opts": {
