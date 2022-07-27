@@ -4,11 +4,9 @@ go 1.18
 
 require (
 	github.com/cosmos/cosmos-sdk v0.45.6
-	github.com/ethereum/go-ethereum v1.10.15
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
 	github.com/sirupsen/logrus v1.8.1
 	github.com/stafihub/stafihub v0.0.0-20220721150152-4a0ac3ba110f
-	github.com/stafiprotocol/chainbridge v1.0.0
 	github.com/urfave/cli/v2 v2.3.0
 	golang.org/x/crypto v0.0.0-20220126234351-aa10faf2a1f8
 )
@@ -88,7 +86,6 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.10.1 // indirect
-	github.com/stafiprotocol/go-substrate-rpc-client v1.1.3 // indirect
 	github.com/stretchr/testify v1.7.1 // indirect
 	github.com/subosito/gotenv v1.2.0 // indirect
 	github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7 // indirect
@@ -114,6 +111,7 @@ require (
 
 replace (
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.1.6
+	github.com/cosmos/cosmos-sdk => github.com/stafihub/cosmos-sdk v0.45.6-stafihub-0.0.3
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
 )

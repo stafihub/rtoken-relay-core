@@ -121,7 +121,7 @@ require (
 replace (
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.1.7-0.20210622111912-ef00f8ac3d76
 	github.com/ChainSafe/go-schnorrkel => github.com/ChainSafe/go-schnorrkel v0.0.0-20200405005733-88cbf1b4c40d
-	github.com/cosmos/cosmos-sdk => github.com/tpkeeper/cosmos-sdk v0.45.4-stafihub-0.0.1
+	github.com/cosmos/cosmos-sdk => github.com/stafihub/cosmos-sdk v0.45.6-stafihub-0.0.3
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
 	// latest grpc doesn't work with with our modified proto compiler, so we need to enforce
