@@ -132,7 +132,7 @@ func (b *Blockstore) TryLoadLatestBlock() (*big.Int, error) {
 	return big.NewInt(0), nil
 }
 
-func getFileName(chain msg.ChainId, relayer string) string {
+func getFileName(chain uint8, relayer string) string {
 	return fmt.Sprintf("%s-%d.block", relayer, chain)
 }
 
