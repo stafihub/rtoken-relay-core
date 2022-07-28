@@ -6,7 +6,6 @@ package config
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/urfave/cli/v2"
 	"os"
 	"path/filepath"
 )
@@ -50,11 +49,11 @@ type RawChainConfig struct {
 	Opts         interface{} `json:"opts"`
 }
 
-func GetConfig(ctx *cli.Context) (*Config, error) {
+func GetConfig(filePath string) (*Config, error) {
 	var cfg Config
 	path := defaultConfigPath
-	if file := ctx.String(ConfigFileFlag.Name); file != "" {
-		path = file
+	if filePath != "" {
+		path = filePath
 	}
 	err := loadConfig(path, &cfg)
 	if err != nil {

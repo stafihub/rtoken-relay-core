@@ -2,27 +2,52 @@
 
 rToken relay core service to interact with Multiple Networks; StaFi Hub, Cosmos etc.
 
-## build
+## Build
 
 ```
 git clone https://github.com/stafihub/rtoken-relay-core.git
 
 cd rtoken-relay-core
 
-make build
+make install
 
 ```
 
-## run 
+## Run 
+
+**commands list:**
+```shell
+relay
+
+Usage:
+  relay [command]
+
+Available Commands:
+  start       Start relay procedure
+  version     Show version information
+  keys        Key tool to manage keys
+  help        Help about any command
+
+Flags:
+  -h, --help   help for relay
+
+Use "relay [command] --help" for more information about a command.
+```
+
+**show version:**
+
+```shell
+relay version
+```
+
+**start relay:**
 
 ```
-./build/relay --config ./config_template_stafihub_cosmoshub.json
+relay start --config ./config_template_stafihub_cosmoshub.json
 ```
 
-## keytool 
+**manage keys:**
 
-```
- ./build/keytool add keyname --prefix stafi --home ./keys/stafi
-
- ./build/keytool list --prefix stafi --home ./keys/stafi
+```shell
+relay keys [command]
 ```
