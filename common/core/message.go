@@ -107,8 +107,10 @@ type EventRParamsChanged struct {
 }
 
 type EventInitPool struct {
-	Denom       string
-	PoolAddress string
+	Denom             string
+	PoolAddress       string
+	WithdrawalAddress string
+	CtrlChannelId     string
 }
 
 type EventRemovePool struct {
