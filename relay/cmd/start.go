@@ -25,8 +25,8 @@ var defaultConfigPath = os.ExpandEnv("./config.json")
 func startCmd() *cobra.Command {
 
 	cmd := &cobra.Command{
-		Use:     "start",
-		Short:   "Start relay procedure",
+		Use:   "start",
+		Short: "Start relay procedure",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			configPath, err := cmd.Flags().GetString(flagConfig)
 			if err != nil {
@@ -47,7 +47,7 @@ func startCmd() *cobra.Command {
 			if err != nil {
 				return err
 			}
-			
+
 			err = log.InitLogFile(cfg.LogFilePath)
 			if err != nil {
 				return err

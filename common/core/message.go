@@ -35,6 +35,8 @@ const (
 	ReasonRValidatorUpdatedEvent = Reason("RValidatorUpdatedEvent")
 	ReasonRValidatorAddedEvent   = Reason("RValidatorAddedEvent")
 	ReasonRParamsChangedEvent    = Reason("RParamsChangedEvent")
+	ReasonInitPoolEvent          = Reason("InitPoolEvent")
+	ReasonRemovePoolEvent        = Reason("RemovePoolEvent")
 
 	//get reason
 	ReasonGetPools              = Reason("GetPools")
@@ -102,6 +104,16 @@ type EventRParamsChanged struct {
 	EraSeconds uint32 `json:"eraSeconds"`
 	LeastBond  string `json:"leastBond"`
 	Offset     int32  `json:"offset"`
+}
+
+type EventInitPool struct {
+	Denom       string
+	PoolAddress string
+}
+
+type EventRemovePool struct {
+	Denom       string
+	PoolAddress string
 }
 
 // === other chain -> stafihub msg data used in cosmos
