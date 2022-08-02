@@ -7,9 +7,9 @@ require (
 	github.com/cosmos/ibc-go/v3 v3.1.0
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/cobra v1.4.0
-	github.com/stafihub/cosmos-relay-sdk v1.8.0
+	github.com/stafihub/cosmos-relay-sdk v1.8.1
 	github.com/stafihub/rtoken-relay-core/common v0.0.0-20220802000335-3df19a5ca75a
-	github.com/stafihub/stafi-hub-relay-sdk v1.6.0
+	github.com/stafihub/stafi-hub-relay-sdk v1.6.1
 	github.com/stafihub/stafihub v0.0.0-20220801021056-1080f0037668
 )
 
@@ -119,7 +119,7 @@ require (
 replace (
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.1.7-0.20210622111912-ef00f8ac3d76
 	github.com/ChainSafe/go-schnorrkel => github.com/ChainSafe/go-schnorrkel v0.0.0-20200405005733-88cbf1b4c40d
-	github.com/cosmos/cosmos-sdk => github.com/stafihub/cosmos-sdk v0.45.6-stafihub-0.0.3
+	github.com/cosmos/cosmos-sdk => github.com/stafihub/cosmos-sdk v0.45.6-stafihub-0.0.4
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
 	// latest grpc doesn't work with with our modified proto compiler, so we need to enforce
