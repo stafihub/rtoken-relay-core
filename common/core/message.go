@@ -111,6 +111,7 @@ type EventInitPool struct {
 	PoolAddress       string
 	WithdrawalAddress string
 	CtrlChannelId     string
+	Validators        []string
 }
 
 type EventRemovePool struct {
