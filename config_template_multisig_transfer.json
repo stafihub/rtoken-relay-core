@@ -1,0 +1,14 @@
+{
+    "keystorePath": "/Users/tpkeeper/.gaia",
+    "multisigAccountName": "multisig1",
+    "subAccountNameList": [
+        "key1",
+        "key2"
+    ],
+    "threshold": 1,
+    "toAddress": "cosmos1k4mrzs67tnd7fl6ax3l440wpa3amat7teurg9a",
+    "amount": "1000000stake",
+    "endpoint": "http://127.0.0.1:16657",
+    "prefix": "cosmos",
+    "gasPrice": "0.0025stake"
+}

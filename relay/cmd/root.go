@@ -29,6 +29,7 @@ func NewRootCmd() *cobra.Command {
 		startCmd(),
 		versionCmd(),
 		keyCmd(),
+		multisigTransferCmd(),
 	)
 	return rootCmd
 }
