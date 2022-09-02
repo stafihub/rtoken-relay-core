@@ -16,17 +16,18 @@ make install
 ## Run 
 
 **commands list:**
-```shell
+```
 relay
 
 Usage:
   relay [command]
 
 Available Commands:
-  start       Start relay procedure
-  version     Show version information
-  keys        Key tool to manage keys
-  help        Help about any command
+  start             Start relay procedure
+  version           Show version information
+  keys              Key tool to manage keys
+  multisig-transfer Tranfer token from multisig account
+  help              Help about any command
 
 Flags:
   -h, --help   help for relay
