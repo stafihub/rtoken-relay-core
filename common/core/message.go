@@ -110,7 +110,7 @@ type EventInitPool struct {
 	Denom             string
 	PoolAddress       string
 	WithdrawalAddress string
-	CtrlChannelId     string
+	HostChannelId     string
 	Validators        []string
 }
 
