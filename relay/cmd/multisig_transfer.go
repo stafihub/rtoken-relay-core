@@ -3,13 +3,15 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
+	"os"
+	"path/filepath"
+
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 	"github.com/cosmos/cosmos-sdk/types"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/stafihub/cosmos-relay-sdk/client"
-	"os"
-	"path/filepath"
+	"github.com/stafihub/rtoken-relay-core/common/log"
 )
 
 func multisigTransferCmd() *cobra.Command {
@@ -44,7 +46,7 @@ func multisigTransferCmd() *cobra.Command {
 				return err
 			}
 
-			cosmosClient, err := client.NewClient(key, config.MultisigAccountName, config.GasPrice, config.Prefix, []string{config.Endpoint})
+			cosmosClient, err := client.NewClient(key, config.MultisigAccountName, config.GasPrice, config.Prefix, []string{config.Endpoint}, log.NewLog("client"))
 			if err != nil {
 				return err
 			}
