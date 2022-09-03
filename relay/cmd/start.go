@@ -116,12 +116,12 @@ func startCmd() *cobra.Command {
 			}
 
 			icaPoolsMap := make(map[string]string)
-			icaPoolCtrlChannel := make(map[string]string)
+			icaPoolHostChannel := make(map[string]string)
 
 			for _, value := range icaPoolsRes.IcaPoolList {
 				if value.Status == stafiHubXLedgerTypes.IcaPoolStatusSetWithdrawal {
 					icaPoolsMap[value.DelegationAccount.Address] = value.WithdrawalAccount.Address
-					icaPoolCtrlChannel[value.DelegationAccount.Address] = value.DelegationAccount.CtrlChannelId
+					icaPoolHostChannel[value.DelegationAccount.Address] = value.DelegationAccount.HostChannelId
 				}
 			}
 
@@ -162,7 +162,7 @@ func startCmd() *cobra.Command {
 			cosmosOption.Offset = rParams.RParams.Offset
 
 			cosmosOption.IcaPoolWithdrawalAddr = bondedIcaPoolWithdrawalAddr
-			cosmosOption.IcaPoolCtrlChannel = icaPoolCtrlChannel
+			cosmosOption.IcaPoolHostChannel = icaPoolHostChannel
 
 			// prepare account prefix from stafihub
 			prefixRes, err := stafiHubChain.GetAddressPrefix(chainConfig.Rsymbol)
