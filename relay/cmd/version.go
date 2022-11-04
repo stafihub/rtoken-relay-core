@@ -34,6 +34,7 @@ func versionCmd() *cobra.Command {
 				Tendermint: dependencyVersions["github.com/tendermint/tendermint"],
 			}
 
+			fmt.Println(logo)
 			bz, _ := json.MarshalIndent(v, "", "  ")
 			fmt.Println(string(bz))
 			return nil
@@ -49,3 +50,16 @@ type version struct {
 	CosmosSDK  string `json:"cosmos_sdk"`
 	Tendermint string `json:"tendermint"`
 }
+
+var logo = `
+             __                 ______   __ 
+            /  |               /      \ /  |
+  _______  _$$ |_     ______  /$$$$$$  |$$/ 
+ /       |/ $$   |   /      \ $$ |_ $$/ /  |
+/$$$$$$$/ $$$$$$/    $$$$$$  |$$   |    $$ |
+$$      \   $$ | __  /    $$ |$$$$/     $$ |
+ $$$$$$  |  $$ |/  |/$$$$$$$ |$$ |      $$ |
+/     $$/   $$  $$/ $$    $$ |$$ |      $$ |
+$$$$$$$/     $$$$/   $$$$$$$/ $$/       $$/ 
+                                            
+`

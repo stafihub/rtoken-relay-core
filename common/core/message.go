@@ -82,14 +82,15 @@ type EventSignatureEnough struct {
 }
 
 type EventRValidatorUpdated struct {
-	Denom        string
-	PoolAddress  string
-	Era          uint32
-	OldAddress   string
-	NewAddress   string
-	CycleVersion uint64
-	CycleNumber  uint64
-	CycleSeconds uint64
+	Denom          string
+	PoolAddress    string
+	Era            uint32
+	OldAddress     string
+	NewAddress     string
+	CycleVersion   uint64
+	CycleNumber    uint64
+	CycleSeconds   uint64
+	BlockTimestamp int64
 }
 type EventRValidatorAdded struct {
 	Denom        string
