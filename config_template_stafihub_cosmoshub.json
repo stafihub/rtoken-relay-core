@@ -24,7 +24,8 @@
       "startBlock": 0,
       "pools": {
         "multisig1": "key1"
-      }
+      },
+      "minUnDelegateAmount": "1000000"
     }
   }
 }
