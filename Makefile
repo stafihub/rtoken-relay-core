@@ -31,5 +31,7 @@ fmt :
 	@echo " > \033[32mFormatting go files ...\033[0m "
 	cd common && go fmt ./...
 	cd relay && go fmt ./...
+lint:
+	cd relay && golangci-lint run ./... --skip-files ".+_test.go"
 
 .PHONY: all lint test race msan tools clean build
