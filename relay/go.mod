@@ -7,7 +7,7 @@ require (
 	github.com/cosmos/ibc-go/v3 v3.4.0
 	github.com/sirupsen/logrus v1.9.0
 	github.com/spf13/cobra v1.5.0
-	github.com/stafihub/cosmos-relay-sdk v1.10.11
+	github.com/stafihub/cosmos-relay-sdk v1.10.10
 	github.com/stafihub/rtoken-relay-core/common v0.0.0-20221104093123-ca51d55b8f53
 	github.com/stafihub/stafi-hub-relay-sdk v1.9.6
 	github.com/stafihub/stafihub v0.2.3
