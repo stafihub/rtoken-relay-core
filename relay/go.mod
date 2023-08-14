@@ -7,9 +7,9 @@ require (
 	github.com/cosmos/ibc-go/v7 v7.2.0
 	github.com/sirupsen/logrus v1.9.0
 	github.com/spf13/cobra v1.7.0
-	github.com/stafihub/cosmos-relay-sdk v1.10.0-cometbft-0.1.0
+	github.com/stafihub/cosmos-relay-sdk v1.10.0-cometbft-0.1.1
 	github.com/stafihub/rtoken-relay-core/common v0.0.0-20221104093123-ca51d55b8f53
-	github.com/stafihub/stafi-hub-relay-sdk v1.10.0-cometbft
+	github.com/stafihub/stafi-hub-relay-sdk v1.10.0-cometbft-0.1.1
 	github.com/stafihub/stafihub v0.4.3-cometbft-0.1.2
 )
 
@@ -179,6 +179,6 @@ require (
 replace (
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.2.0
 	github.com/ChainSafe/go-schnorrkel => github.com/ChainSafe/go-schnorrkel v0.0.0-20200405005733-88cbf1b4c40d
-	github.com/cosmos/cosmos-sdk => github.com/stafihub/cosmos-sdk v0.47.4-stafihub-0.1.0
+	github.com/cosmos/cosmos-sdk => github.com/stafihub/cosmos-sdk v0.47.4-stafihub-0.1.1
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 )
