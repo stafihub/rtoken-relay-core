@@ -41,7 +41,7 @@ func multisigTransferCmd() *cobra.Command {
 			}
 			fmt.Printf("config: %+v\n\n", config)
 			fmt.Printf("Will open wallet from <%s>. \nPlease ", config.KeystorePath)
-			key, err := keyring.New(types.KeyringServiceName(), keyring.BackendFile, config.KeystorePath, os.Stdin)
+			key, err := keyring.New(types.KeyringServiceName(), keyring.BackendFile, config.KeystorePath, os.Stdin, client.MakeEncodingConfig().Marshaler)
 			if err != nil {
 				return err
 			}

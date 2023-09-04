@@ -130,6 +130,17 @@ type ProposalExeLiquidityBond struct {
 	State  stafiHubXLedgerTypes.LiquidityBondState
 }
 
+type ProposalExeNativeAndLsmLiquidityBond struct {
+	Denom            string
+	Bonder           string
+	Pool             string
+	Txhash           string
+	NativeBondAmount sdk.Int
+	LsmBondAmount    sdk.Int
+	State            stafiHubXLedgerTypes.LiquidityBondState
+	Msgs             []sdk.Msg
+}
+
 type ProposalSetChainEra struct {
 	Denom string
 	Era   uint32
