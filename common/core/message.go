@@ -17,14 +17,15 @@ type Reason string
 
 const (
 	//send from other chain
-	ReasonNewEra                 = Reason("NewEra")
-	ReasonExeLiquidityBond       = Reason("ExeLiquidityBond")
-	ReasonBondReport             = Reason("BondReport")
-	ReasonActiveReport           = Reason("ActiveReport")
-	ReasonTransferReport         = Reason("TransferReport")
-	ReasonSubmitSignature        = Reason("SubmitSignature")
-	ReasonRValidatorUpdateReport = Reason("RValidatorUpdateReport")
-	ReasonInterchainTx           = Reason("InterchainTx")
+	ReasonNewEra                       = Reason("NewEra")
+	ReasonExeLiquidityBond             = Reason("ExeLiquidityBond")
+	ReasonExeNativeAndLsmLiquidityBond = Reason("ExeLiquidityNativeAndLsmBond")
+	ReasonBondReport                   = Reason("BondReport")
+	ReasonActiveReport                 = Reason("ActiveReport")
+	ReasonTransferReport               = Reason("TransferReport")
+	ReasonSubmitSignature              = Reason("SubmitSignature")
+	ReasonRValidatorUpdateReport       = Reason("RValidatorUpdateReport")
+	ReasonInterchainTx                 = Reason("InterchainTx")
 
 	//send when got event from stafihub chain
 	ReasonEraPoolUpdatedEvent    = Reason("EraPoolUpdatedEvent")
