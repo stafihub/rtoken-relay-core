@@ -40,10 +40,11 @@ const (
 	ReasonRemovePoolEvent        = Reason("RemovePoolEvent")
 
 	//get reason
-	ReasonGetPools              = Reason("GetPools")
-	ReasonGetSignatures         = Reason("GetSignatures")
-	ReasonGetBondRecord         = Reason("GetBondRecord")
-	ReasonGetInterchainTxStatus = Reason("GetInterchainTxStatus")
+	ReasonGetPools                   = Reason("GetPools")
+	ReasonGetSignatures              = Reason("GetSignatures")
+	ReasonGetBondRecord              = Reason("GetBondRecord")
+	ReasonGetInterchainTxStatus      = Reason("GetInterchainTxStatus")
+	ReasonGetLatestLsmBondProposalId = Reason("GetLatestLsmBondProposalId")
 )
 
 // === stafihub -> other chain msg data used in cosmos
@@ -220,4 +221,8 @@ type ParamGetBondRecord struct {
 type ParamGetInterchainTxStatus struct {
 	PropId string
 	Status chan stafiHubXLedgerTypes.InterchainTxStatus
+}
+
+type ParamGetLatestLsmBondProposalId struct {
+	PropId chan string
 }
