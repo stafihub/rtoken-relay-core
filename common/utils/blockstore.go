@@ -125,7 +125,14 @@ func (b *Blockstore) TryLoadLatestBlock() (*big.Int, error) {
 		if err != nil {
 			return nil, err
 		}
-		block, _ := big.NewInt(0).SetString(string(dat), 10)
+		if len(dat) == 0 {
+			return big.NewInt(0), nil
+		}
+
+		block, ok := big.NewInt(0).SetString(string(dat), 10)
+		if !ok {
+			return nil, fmt.Errorf("blockstore: %s parse to number err", string(dat))
+		}
 		return block, nil
 	}
 	// Otherwise just return 0
