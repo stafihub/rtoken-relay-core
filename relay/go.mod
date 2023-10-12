@@ -1,6 +1,6 @@
 module github.com/stafihub/rtoken-relay-core/relay
 
-go 1.19
+go 1.21
 
 require (
 	github.com/cosmos/cosmos-sdk v0.46.13
