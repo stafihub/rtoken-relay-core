@@ -1068,6 +1068,7 @@ github.com/smartystreets/assertions v0.0.0-20180927180507-b2de0cb4f26d/go.mod h1
 github.com/smartystreets/goconvey v1.6.4/go.mod h1:syvi0/a8iFYH4r/RixwvyeAJjdLS9QV7WQ/tjFTllLA=
 github.com/soheilhy/cmux v0.1.4/go.mod h1:IM3LyeVVIOuxMH7sFAkER9+bJ4dT7Ms6E4xg4kGIyLM=
 github.com/sony/gobreaker v0.4.1/go.mod h1:ZKptC7FHNvhBz7dN2LGjPVBz2sZJmc0/PkyDJOjmxWY=
+github.com/sourcegraph/appdash-data v0.0.0-20151005221446-73f23eafcf67/go.mod h1:tNZjgbYncKL5HxvDULAr/mWDmFz4B7H8yrXEDlnoIiw=
 github.com/spaolacci/murmur3 v0.0.0-20180118202830-f09979ecbc72/go.mod h1:JwIasOWyU6f++ZhiEuf87xNszmSA2myDM2Kzu9HwQUA=
 github.com/spaolacci/murmur3 v1.1.0 h1:7c1g84S4BPRrfL5Xrdp6fOJ206sU9y293DDHaoy0bLI=
 github.com/spaolacci/murmur3 v1.1.0/go.mod h1:JwIasOWyU6f++ZhiEuf87xNszmSA2myDM2Kzu9HwQUA=
@@ -1091,8 +1092,8 @@ github.com/spf13/pflag v1.0.5/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An
 github.com/spf13/viper v1.3.2/go.mod h1:ZiWeW+zYFKm7srdB9IoDzzZXaJaI5eL9QjNiN/DMA2s=
 github.com/spf13/viper v1.16.0 h1:rGGH0XDZhdUOryiDWjmIvUSWpbNqisK8Wk0Vyefw8hc=
 github.com/spf13/viper v1.16.0/go.mod h1:yg78JgCJcbrQOvV9YLXgkLaZqUidkY9K+Dd1FofRzQg=
-github.com/stafihub/cosmos-relay-sdk v1.10.0-cometbft-0.1.4 h1:+AXJ4vENZJyeFSXhl8U+54HKbNhia26cqgTHKapXPMg=
-github.com/stafihub/cosmos-relay-sdk v1.10.0-cometbft-0.1.4/go.mod h1:kme2BNPO1Npuc9Q5JZrUsjYXdUls6RDZCYr7QUioAs0=
+github.com/stafihub/cosmos-relay-sdk v1.10.0-cometbft-0.1.5 h1:t9uf99QwQvMSQkjKqQ84mb5HpCa095TZRvjFD4J1ToA=
+github.com/stafihub/cosmos-relay-sdk v1.10.0-cometbft-0.1.5/go.mod h1:kme2BNPO1Npuc9Q5JZrUsjYXdUls6RDZCYr7QUioAs0=
 github.com/stafihub/cosmos-sdk v0.47.4-stafihub-0.1.1 h1:gg5cTPhFSXy/72OjiEzdB2QhrbkkPXgRttAOY6xNGhs=
 github.com/stafihub/cosmos-sdk v0.47.4-stafihub-0.1.1/go.mod h1:R5n+uM7vguVPFap4pgkdvQCT1nVo/OtPwrlAU40rvok=
 github.com/stafihub/rtoken-relay-core/common v0.0.0-20221104093123-ca51d55b8f53 h1:x4Z+029JMLfAYf39UupxxtPuHp2Q8I903Ujc7sNG1vs=
@@ -1899,4 +1900,3 @@ rsc.io/tmplfunc v0.0.3/go.mod h1:AG3sTPzElb1Io3Yg4voV9AGZJuleGAwaVRxL9M49PhA=
 sigs.k8s.io/yaml v1.1.0/go.mod h1:UJmg0vDUVViEyp3mgSv9WPwZCDxu4rQW1olrI1uml+o=
 sigs.k8s.io/yaml v1.3.0 h1:a2VclLzOGrwOHDiV8EfBGhvjHvP46CtW5j6POvhYGGo=
 sigs.k8s.io/yaml v1.3.0/go.mod h1:GeOyir5tyXNByN85N/dRIT9es5UQNerPYEKK56eTBm8=
-sourcegraph.com/sourcegraph/appdash v0.0.0-20190731080439-ebfcffb1b5c0/go.mod h1:hI742Nqp5OhwiqlzhgfbWU4mW4yO10fP+LoT9WOswdU=
