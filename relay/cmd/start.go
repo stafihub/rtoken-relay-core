@@ -119,7 +119,7 @@ func startCmd() *cobra.Command {
 			icaPoolHostChannel := make(map[string]string)
 
 			for _, value := range icaPoolsRes.IcaPoolList {
-				if value.Status == stafiHubXLedgerTypes.IcaPoolStatusSetWithdrawal || value.Status == 5 {
+				if value.Status >= stafiHubXLedgerTypes.IcaPoolStatusSetWithdrawal {
 					icaPoolsMap[value.DelegationAccount.Address] = value.WithdrawalAccount.Address
 					icaPoolHostChannel[value.DelegationAccount.Address] = value.DelegationAccount.HostChannelId
 				}
