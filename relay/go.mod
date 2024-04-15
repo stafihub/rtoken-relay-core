@@ -7,10 +7,10 @@ require (
 	github.com/cosmos/ibc-go/v7 v7.2.0
 	github.com/sirupsen/logrus v1.9.0
 	github.com/spf13/cobra v1.7.0
-	github.com/stafihub/cosmos-relay-sdk v1.12.0
+	github.com/stafihub/cosmos-relay-sdk v1.12.1
 	github.com/stafihub/rtoken-relay-core/common v0.0.0-20240313012321-b5320f24936e
-	github.com/stafihub/stafi-hub-relay-sdk v1.12.0
-	github.com/stafihub/stafihub v0.5.1-cometbft-0.2.1
+	github.com/stafihub/stafi-hub-relay-sdk v1.12.1
+	github.com/stafihub/stafihub v0.5.1-cometbft-0.2.2
 )
 
 require (
@@ -193,7 +193,7 @@ require (
 replace (
 	// use cosmos fork of keyring
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.2.0
-	github.com/cosmos/cosmos-sdk => github.com/stafihub/cosmos-sdk v0.47.10-ics-lsm-stafihub-0.0.1
+	github.com/cosmos/cosmos-sdk => github.com/stafihub/cosmos-sdk v0.47.10-ics-lsm-stafihub-0.0.3
 	// dgrijalva/jwt-go is deprecated and doesn't receive security updates.
 	// TODO: remove it: https://github.com/cosmos/cosmos-sdk/issues/13134
 	github.com/dgrijalva/jwt-go => github.com/golang-jwt/jwt/v4 v4.4.2
