@@ -8,7 +8,7 @@ require (
 	github.com/sirupsen/logrus v1.9.0
 	github.com/spf13/cobra v1.7.0
 	github.com/stafihub/cosmos-relay-sdk v1.12.9
-	github.com/stafihub/rtoken-relay-core/common v0.0.0-20240313012321-b5320f24936e
+	github.com/stafihub/rtoken-relay-core/common v0.2.0
 	github.com/stafihub/stafi-hub-relay-sdk v1.12.1
 	github.com/stafihub/stafihub v0.5.1-cometbft-0.2.2
 )
